@@ -15,7 +15,7 @@ const Contact = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.25 }}
               transition={{ duration: 0.6 }}
-              className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-sm"
+              className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-sm"
             >
               <img
                 src={visuals.contactImage}
@@ -86,7 +86,7 @@ const Contact = () => {
             <SectionHeading
               eyebrow="Contact"
               title="Reach the Abuja or Kaduna office"
-              description="Use the details below to connect with Sonate Edge International Limited."
+              description="Use the details below to connect with Sonat Edge International Limited."
             />
 
             <motion.form
@@ -94,6 +94,7 @@ const Contact = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.25 }}
               transition={{ duration: 0.65 }}
+              onSubmit={(event) => event.preventDefault()}
               className="mt-10 rounded-2xl border border-white/10 bg-white/5 p-6 shadow-sm sm:p-8"
             >
               <h3 className="text-3xl font-semibold leading-none text-white">
@@ -164,7 +165,7 @@ const Contact = () => {
               </label>
 
               <button
-                type="button"
+                type="submit"
                 className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:bg-slate-100"
               >
                 Send Message
@@ -173,11 +174,19 @@ const Contact = () => {
             </motion.form>
 
             <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-slate-950/80 shadow-sm">
-              <div className="relative h-[220px] bg-[linear-gradient(135deg,rgba(15,23,42,0.98)_0%,rgba(2,6,23,0.95)_100%)]">
-                <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-3 text-sm font-semibold text-white">
-                  <MapPin size={16} className="text-white/80" />
-                  Map placeholder
-                </div>
+              <div className="border-b border-white/10 px-6 py-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-300">
+                  Abuja Office Map
+                </p>
+              </div>
+              <div className="h-[320px]">
+                <iframe
+                  title="Sonat Edge Abuja office map"
+                  src="https://www.google.com/maps?q=Suite%20203%2C%20Anbeez%20Plaza%2C%20Wuse%20Zone%205%2C%20Ndola%20Crescent%2C%20Abuja&output=embed"
+                  className="h-full w-full"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
             </div>
           </div>

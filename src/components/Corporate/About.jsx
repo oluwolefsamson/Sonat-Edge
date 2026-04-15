@@ -27,7 +27,7 @@ const About = () => {
             <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
               <img
                 src={visuals.aboutImage}
-                alt="Sonate Edge operations and service delivery"
+                alt="Sonat Edge operations and service delivery"
                 className="h-[540px] w-full rounded-lg object-cover object-center"
               />
               <div className="absolute inset-x-5 bottom-5 rounded-2xl border border-white/10 bg-slate-950/80 p-5 text-white shadow-sm backdrop-blur-sm">

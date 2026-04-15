@@ -63,7 +63,7 @@ const Services = () => {
             <SectionHeading
               eyebrow="Services"
               title="Five core service lines built for execution, clarity, and speed."
-              description="From contracting and construction to printing, training, and management support, Sonate Edge International Limited offers integrated solutions that combine execution quality with dependable client service."
+              description="From contracting and construction to printing, training, and management support, Sonat Edge International Limited offers integrated solutions that combine execution quality with dependable client service."
             />
 
             <div className="mt-10 grid gap-6 md:grid-cols-2">

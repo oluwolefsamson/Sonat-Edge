@@ -1,5 +1,6 @@
 import { ArrowRight, Building2, ShieldCheck, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { company, differentiators } from "../../data/companyProfile";
 import { visuals } from "../../data/visuals";
 
@@ -22,7 +23,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/50" />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(2,6,23,0.78)_0%,rgba(2,6,23,0.55)_45%,rgba(2,6,23,0.28)_100%)]" />
 
-      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-28 lg:grid-cols-[1.05fr_0.95fr] lg:items-end lg:py-36">
+      <div className="mx-auto grid min-h-[92vh] max-w-7xl gap-10 px-6 py-28 lg:grid-cols-[1.05fr_0.95fr] lg:items-end lg:py-36">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
@@ -33,7 +34,7 @@ const Hero = () => {
             <Sparkles size={14} />
             Corporate Profile
           </div>
-          <h1 className="max-w-2xl text-5xl font-semibold leading-[0.95] tracking-tight text-white sm:text-6xl lg:text-[4.6rem]">
+          <h1 className="max-w-2xl text-5xl font-bold leading-[0.92] tracking-tight text-white sm:text-6xl lg:text-[5.3rem]">
             Contracting, construction, printing, and management with a sharper edge.
           </h1>
           <p className="max-w-2xl text-[15px] leading-8 text-slate-200 sm:text-base lg:text-[17px]">
@@ -43,19 +44,19 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col gap-4 sm:flex-row">
-            <a
-              href="#services"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:bg-slate-100"
+            <Link
+              to="/services"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:bg-slate-100"
             >
               Our Services
               <ArrowRight size={16} />
-            </a>
-            <a
-              href="#contact"
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-transparent px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white/10"
+            </Link>
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-transparent px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white/10"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-3">

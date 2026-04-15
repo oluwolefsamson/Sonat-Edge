@@ -1,8 +1,8 @@
 export const company = {
-  name: "Sonate Edge International Limited",
+  name: "Sonat Edge International Limited",
   tagline: "Your perfect edge in contracting and integrated business delivery.",
   overview:
-    "Sonate Edge International Limited is a Nigerian-based contracting and services company focused on disciplined delivery, clear communication, and dependable outcomes.",
+    "Sonat Edge International Limited is a Nigerian-based contracting and services company focused on disciplined delivery, clear communication, and dependable outcomes.",
   vision:
     "To become a trusted partner for integrated contracting and business support across Nigeria and beyond.",
   mission:
@@ -118,7 +118,7 @@ export const projects = [
 export const team = {
   leadership: [
     {
-      name: "Mr. Ade Diran Oluwaseyi",
+      name: "Mr. Adediran Oluwaseyi",
       position: "Chief Executive Officer",
       role: "CEO",
     },
@@ -178,8 +178,8 @@ export const contacts = {
     address: "6th Floor, Bank of Industry, 18, Waff Road, Kaduna.",
   },
   phones: ["062-888825", "08073421389", "08054288271"],
-  email: "sonateedge@yahoo.com",
-  website: "www.sonateedge.com",
+  email: "sonatedge@yahoo.com",
+  website: "www.sonatedge.com",
 };
 
 export const differentiators = [

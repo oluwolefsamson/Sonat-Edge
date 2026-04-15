@@ -50,7 +50,7 @@ const Values = () => {
           <div>
             <SectionHeading
               eyebrow="Core Values"
-              title="Why clients choose Sonate Edge"
+              title="Why clients choose Sonat Edge"
               description="The company profile highlights a clear value system built around excellence, integrity, innovation, reliability, and customer focus. These principles shape how every project is approached and delivered."
               tone="light"
             />

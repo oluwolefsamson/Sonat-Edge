@@ -22,7 +22,7 @@ const Projects = () => {
             <SectionHeading
               eyebrow="Projects"
               title="A curated portfolio of delivery environments"
-              description="The portfolio focuses on the kinds of work Sonate Edge is built to support, presented as a more visual and premium showcase."
+              description="The portfolio focuses on the kinds of work Sonat Edge is built to support, presented as a more visual and premium showcase."
             />
             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-300">
               Each card uses a full-bleed image, hover overlay, and concise copy so
