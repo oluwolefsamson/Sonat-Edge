@@ -2,44 +2,44 @@ export const company = {
   name: "Sonate Edge International Limited",
   tagline: "Your perfect edge in contracting and integrated business delivery.",
   overview:
-    "Sonate Edge International Limited is a dynamic and versatile Nigerian-based company specializing in general contracts and a broad range of complementary services. We deliver excellence, innovation, and reliability so clients can move forward with confidence.",
+    "Sonate Edge International Limited is a Nigerian-based contracting and services company focused on disciplined delivery, clear communication, and dependable outcomes.",
   vision:
-    "To be the leading provider of integrated contracting and management services in Nigeria and beyond, empowering businesses with the competitive edge needed for sustainable success.",
+    "To become a trusted partner for integrated contracting and business support across Nigeria and beyond.",
   mission:
-    "To deliver high-quality, innovative, and cost-effective solutions in general contracting, training, management, printing, and construction while upholding integrity, professionalism, and excellence in every project.",
+    "To deliver practical, high-quality, and cost-effective solutions in contracting, construction, printing, training, and management.",
   edge:
-    "We pride ourselves on long-term partnerships, efficient execution, and tailored solutions that support businesses and projects at every stage.",
+    "We build long-term partnerships through efficient execution, responsive service, and tailored solutions that support every stage of a project.",
 };
 
 export const services = [
   {
     title: "General Contracts",
     description:
-      "Procurement, supply chain support, and project execution across multiple industries with dependable delivery and efficient coordination.",
+      "Procurement, supply coordination, and project execution delivered with clarity and dependable follow-through.",
     icon: "briefcase",
   },
   {
     title: "Construction Services",
     description:
-      "Planning, design, and execution for residential, commercial, and infrastructure projects with a focus on safety, quality, and timely completion.",
+      "Planning and execution for residential, commercial, and infrastructure projects with a strong quality focus.",
     icon: "construction",
   },
   {
     title: "Printing Services",
     description:
-      "Professional printing for marketing materials, corporate branding, packaging, and promotional items using modern production technology.",
+      "Professional printing for brand materials, marketing collateral, packaging, and promotional assets.",
     icon: "printer",
   },
   {
     title: "Training & Capacity Building",
     description:
-      "Customized development programs for individuals and organizations covering leadership, technical expertise, skills development, and industry knowledge.",
+      "Practical development programs for teams and organizations focused on leadership, skills, and performance.",
     icon: "graduation",
   },
   {
     title: "Management Services",
     description:
-      "Business management, project management, operations optimization, and strategic planning support designed to improve performance and growth.",
+      "Business and project management support designed to improve operations, coordination, and growth.",
     icon: "management",
   },
 ];
@@ -77,15 +77,15 @@ export const projects = [
     category: "Construction",
     title: "Commercial and infrastructure delivery",
     description:
-      "Representative build and execution capability for projects that require disciplined planning, quality control, and timely completion.",
+      "Structured delivery for complex builds where timing, quality, and coordination matter.",
     accent: "from-slate-900 via-slate-800 to-sky-900",
     image: "projectOne",
   },
   {
-    category: "Printing",
+    category: "Branding",
     title: "Corporate branding and production",
     description:
-      "High-impact print work for marketing collateral, brand materials, packaging, and promotional assets with a polished finish.",
+      "High-impact print work for corporate identity, campaigns, and polished promotional assets.",
     accent: "from-sky-900 via-cyan-900 to-slate-900",
     image: "projectTwo",
   },
@@ -93,9 +93,25 @@ export const projects = [
     category: "Contracts",
     title: "Multi-industry procurement support",
     description:
-      "General contract execution across supply, coordination, and delivery tasks that keep businesses and projects moving.",
+      "Contract execution and coordination across supply, delivery, and administrative workflows.",
     accent: "from-slate-950 via-slate-800 to-slate-700",
     image: "projectThree",
+  },
+  {
+    category: "Training",
+    title: "Capacity building programs",
+    description:
+      "Practical learning sessions designed to strengthen leadership, communication, and execution.",
+    accent: "from-slate-900 via-sky-900 to-cyan-900",
+    image: "projectFour",
+  },
+  {
+    category: "Operations",
+    title: "Business operations support",
+    description:
+      "Operational support that improves efficiency, reporting, and day-to-day coordination.",
+    accent: "from-slate-800 via-slate-900 to-black",
+    image: "projectFive",
   },
 ];
 

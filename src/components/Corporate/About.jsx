@@ -14,9 +14,9 @@ const aboutPoints = [
 const About = () => {
   return (
     <section id="about" className="relative overflow-hidden bg-gray-50 text-slate-900">
-      <div className="absolute left-0 top-0 h-80 w-80 rounded-full bg-sky-500/10 blur-3xl" />
-      <div className="mx-auto max-w-7xl px-6 py-24 sm:py-28">
-        <div className="grid gap-14 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
+      <div className="absolute left-0 top-0 h-80 w-80 rounded-full bg-slate-300/30 blur-3xl" />
+      <div className="mx-auto max-w-7xl px-6 py-20 sm:py-24">
+        <div className="grid gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
           <motion.div
             initial={{ opacity: 0, x: -28 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -24,13 +24,13 @@ const About = () => {
             transition={{ duration: 0.65 }}
             className="relative"
           >
-            <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-5 shadow-[0_24px_70px_rgba(15,23,42,0.12)]">
+            <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
               <img
                 src={visuals.aboutImage}
                 alt="Sonate Edge operations and service delivery"
-                className="h-[520px] w-full rounded-[1.5rem] object-cover object-center"
+                className="h-[540px] w-full rounded-lg object-cover object-center"
               />
-              <div className="absolute inset-x-5 bottom-5 rounded-[1.5rem] border border-white/10 bg-slate-950/80 p-5 text-white shadow-2xl backdrop-blur-md">
+              <div className="absolute inset-x-5 bottom-5 rounded-2xl border border-white/10 bg-slate-950/80 p-5 text-white shadow-sm backdrop-blur-sm">
                 <p className="text-[11px] uppercase tracking-[0.32em] text-sky-300">
                   Company overview
                 </p>
@@ -59,9 +59,9 @@ const About = () => {
                 return (
                   <div
                     key={point.label}
-                    className="flex items-center gap-3 rounded-[1.35rem] border border-slate-200 bg-white p-4 shadow-[0_10px_30px_rgba(15,23,42,0.06)]"
+                    className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
                   >
-                    <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-sky-500/10 text-sky-700 ring-1 ring-sky-400/15">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-100 text-slate-700">
                       <Icon size={18} />
                     </div>
                     <p className="text-sm font-semibold text-slate-900">

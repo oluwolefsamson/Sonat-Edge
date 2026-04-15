@@ -38,12 +38,12 @@ const SectionHeading = ({
       ) : null}
       <div className="max-w-3xl">
         <h2
-          className={`text-3xl font-semibold leading-[0.95] tracking-tight sm:text-4xl lg:text-5xl ${titleClass}`}
+          className={`text-3xl font-semibold leading-[1] tracking-tight sm:text-4xl lg:text-5xl ${titleClass}`}
         >
           {title}
         </h2>
         <p
-          className={`mt-4 max-w-2xl text-[15px] leading-8 sm:text-base lg:text-[17px] ${descriptionClass}`}
+          className={`mt-4 max-w-2xl text-[15px] leading-7 sm:text-base ${descriptionClass}`}
         >
           {description}
         </p>

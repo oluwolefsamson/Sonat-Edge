@@ -1,7 +1,7 @@
 import React from "react";
 import featureImg from "../../../assets/images/feature-img.jpg";
-import videoIcon from "../../../assets/images/video-icon.png";
-import avatarIcon from "../../../assets/images/avatar-icon.jpg";
+import featureBadge from "../../../assets/images/Star.png";
+import featureAvatar from "../../../assets/images/ProfileSettingImg/Profile-image.png";
 
 const Feature = () => {
   return (
@@ -49,7 +49,7 @@ const Feature = () => {
                   </p>
                 </div>
                 <span className="w-5 h-5 lg:w-[34px] flex items-center justify-center bg-yellowColor rounded py-1 px-[6px] lg:py-3 lg:px-[9px]">
-                  <img src={videoIcon} alt="Video Icon" />
+                  <img src={featureBadge} alt="Feature Badge" />
                 </span>
               </div>
 
@@ -59,7 +59,7 @@ const Feature = () => {
 
               <div className="flex items-center gap-[6px] lg:gap-[10px] mt-2 lg:mt-[18px] ">
                 <img
-                  src={avatarIcon}
+                  src={featureAvatar}
                   alt="Supplier Avatar"
                   className="h-[50px] rounded-full"
                 />

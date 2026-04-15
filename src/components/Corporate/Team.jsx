@@ -12,26 +12,23 @@ const TeamCard = ({ member, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.25 }}
       transition={{ duration: 0.45, delay: index * 0.05 }}
-      className="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-[0_14px_40px_rgba(15,23,42,0.08)]"
+      className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md"
     >
       <div className="relative">
         <img
           src={avatar}
           alt={member.name}
-          className="h-[320px] w-full object-cover object-center"
+          className="h-[280px] w-full rounded-lg object-cover object-center"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_50%,rgba(2,6,23,0.88)_100%)]" />
-        <div className="absolute inset-x-0 bottom-0 p-5">
-          <span className="inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-white backdrop-blur-md">
-            {member.role}
-          </span>
-          <h3 className="mt-4 text-2xl font-semibold leading-none text-white">
-            {member.name}
-          </h3>
-          <p className="mt-3 text-sm leading-7 text-slate-200">
-            {member.position}
-          </p>
-        </div>
+      </div>
+      <div className="space-y-3 p-5">
+        <span className="inline-flex rounded-full border border-slate-200 bg-slate-100 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-700">
+          {member.role}
+        </span>
+        <h3 className="text-2xl font-bold leading-tight text-slate-900">
+          {member.name}
+        </h3>
+        <p className="text-sm leading-7 text-slate-600">{member.position}</p>
       </div>
     </motion.article>
   );
@@ -40,27 +37,27 @@ const TeamCard = ({ member, index }) => {
 const Team = () => {
   return (
     <section id="team" className="relative overflow-hidden bg-gray-50 text-slate-900">
-      <div className="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-sky-500/10 blur-3xl" />
-      <div className="mx-auto max-w-7xl px-6 py-24 sm:py-28">
-        <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+      <div className="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-slate-300/30 blur-3xl" />
+      <div className="mx-auto max-w-7xl px-6 py-20 sm:py-24">
+        <div className="grid gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
-            className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_24px_70px_rgba(15,23,42,0.12)]"
+            className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
           >
             <img
-              src={visuals.teamPortraits[0]}
+              src={visuals.teamFeatureImage}
               alt="Leadership and management visual"
-              className="h-[780px] w-full object-cover"
+              className="h-[780px] w-full rounded-lg object-cover"
             />
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.06)_0%,rgba(15,23,42,0.92)_100%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.04)_0%,rgba(15,23,42,0.88)_100%)]" />
             <div className="absolute inset-x-0 bottom-0 p-8 text-white">
               <p className="text-[11px] uppercase tracking-[0.32em] text-sky-300">
                 Management structure
               </p>
-              <h2 className="mt-3 text-4xl font-semibold leading-none">
+              <h2 className="mt-3 text-4xl font-semibold leading-[1] sm:text-5xl">
                 Experienced leadership across delivery, finance, development, and operations.
               </h2>
               <p className="mt-4 max-w-md text-sm leading-7 text-slate-300">
@@ -79,7 +76,7 @@ const Team = () => {
               tone="light"
             />
 
-            <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-2">
+            <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               {team.leadership.map((member, index) => (
                 <TeamCard key={member.name} member={member} index={index} />
               ))}

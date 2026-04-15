@@ -4,20 +4,22 @@ import About from "../../components/Corporate/About";
 import Services from "../../components/Corporate/Services";
 import Values from "../../components/Corporate/Values";
 import Projects from "../../components/Corporate/Projects";
+import Testimonial from "../../components/Corporate/Testimonial";
 import Team from "../../components/Corporate/Team";
 import Contact from "../../components/Corporate/Contact";
 import SiteFooter from "../../components/Corporate/SiteFooter";
 
 const Home = () => {
   return (
-    <div id="top" className="relative bg-slate-950 text-slate-100">
-      <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(14,165,233,0.12),transparent_28%),radial-gradient(circle_at_80%_0%,rgba(255,255,255,0.06),transparent_24%),linear-gradient(180deg,#020617_0%,#0f172a_56%,#111827_100%)]" />
+    <div id="top" className="relative bg-[#f7f4ef] text-slate-900">
+      <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(148,163,184,0.12),transparent_30%),linear-gradient(180deg,#f7f4ef_0%,#f3efe7_100%)]" />
       <SiteHeader />
       <Hero />
       <About />
       <Services />
       <Values />
       <Projects />
+      <Testimonial />
       <Team />
       <Contact />
       <SiteFooter />

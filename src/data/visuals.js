@@ -1,17 +1,43 @@
 export const visuals = {
-  heroImage: "https://unsplash.com/photos/ordRm3twjOg/download?force=true",
-  aboutImage: "https://unsplash.com/photos/oWp_brmeBdQ/download?force=true",
-  servicesImage: "https://unsplash.com/photos/U6ZbkYw8Gw0/download?force=true",
-  valuesImage: "https://unsplash.com/photos/ordRm3twjOg/download?force=true",
-  projectOne: "https://unsplash.com/photos/U6ZbkYw8Gw0/download?force=true",
-  projectTwo: "https://unsplash.com/photos/oWp_brmeBdQ/download?force=true",
-  projectThree: "https://unsplash.com/photos/ordRm3twjOg/download?force=true",
-  contactImage: "https://unsplash.com/photos/oWp_brmeBdQ/download?force=true",
+  heroImage:
+    "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80",
+  aboutImage:
+    "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1800&q=80",
+  servicesImage:
+    "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1800&q=80",
+  valuesImage:
+    "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1800&q=80",
+  projectOne:
+    "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1800&q=80",
+  projectTwo:
+    "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=80",
+  projectThree:
+    "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1800&q=80",
+  projectFour:
+    "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1800&q=80",
+  projectFive:
+    "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1800&q=80",
+  contactImage:
+    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80",
+  teamFeatureImage:
+    "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1800&q=80",
+  testimonialFeatureImage:
+    "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1800&q=80",
+  testimonialOne:
+    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80",
+  testimonialTwo:
+    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80",
+  testimonialThree:
+    "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=1200&q=80",
   teamPortraits: [
-    "https://unsplash.com/photos/ZX6lYdqW3qU/download?force=true",
-    "https://unsplash.com/photos/x7ksVaD2_VI/download?force=true",
-    "https://unsplash.com/photos/wCIDfKBMDHE/download?force=true",
-    "https://unsplash.com/photos/leJrmp-9ISs/download?force=true",
-    "https://unsplash.com/photos/ZX6lYdqW3qU/download?force=true",
+    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=1200&q=80",
   ],
 };

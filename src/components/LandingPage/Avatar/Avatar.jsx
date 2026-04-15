@@ -1,33 +1,31 @@
 import { AvatarCircles } from "../magicui/avatar-circles";
 
-import Sign2 from "../../../assets/images/sign2.jpg";
-import Sign3 from "../../../assets/images/sign3.jpg";
-import Sign4 from "../../../assets/images/sign4.jpg";
+const blackManAvatar =
+  "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait_of_an_old_black_man.jpg";
+const whiteWomanAvatar =
+  "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait_of_woman_in_white_(15082718530).jpg";
+const blackWomanAvatar =
+  "https://commons.wikimedia.org/wiki/Special:FilePath/Black_woman_(10584108825).jpg";
+const whiteManAvatar =
+  "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait_of_Galen_Clark,%20the_first_white_man_in_Yosemite_Valley.jpg";
 
 const avatars = [
   {
-    imageUrl: Sign4,
-    profileUrl: "https://unsplash.com/photos/YhiSA2Kxm8A",
+    imageUrl: blackManAvatar,
+    profileUrl: "https://commons.wikimedia.org/wiki/File:Portrait_of_an_old_black_man.jpg",
   },
   {
-    imageUrl: Sign2,
-    profileUrl: "https://unsplash.com/photos/PWBozjMIdI4",
+    imageUrl: whiteWomanAvatar,
+    profileUrl:
+      "https://commons.wikimedia.org/wiki/File:Portrait_of_woman_in_white_(15082718530).jpg",
   },
   {
-    imageUrl: Sign3,
-    profileUrl: "https://unsplash.com/photos/rXvxDzjZxvU",
+    imageUrl: blackWomanAvatar,
+    profileUrl: "https://commons.wikimedia.org/wiki/File:Black_woman_(10584108825).jpg",
   },
   {
-    imageUrl: Sign4,
-    profileUrl: "https://unsplash.com/photos/BXOXnQ26B7o",
-  },
-  {
-    imageUrl: Sign2,
-    profileUrl: "https://unsplash.com/photos/4Wv1btdw9Ew",
-  },
-  {
-    imageUrl: Sign3,
-    profileUrl: "https://unsplash.com/photos/JgGFomscHho",
+    imageUrl: whiteManAvatar,
+    profileUrl: "https://commons.wikimedia.org/wiki/File:Portrait_of_Galen_Clark,_the_first_white_man_in_Yosemite_Valley.jpg",
   },
 ];
 
