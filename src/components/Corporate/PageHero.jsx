@@ -10,6 +10,36 @@ const PageHero = ({
   secondaryCta,
   stats,
 }) => {
+  const renderCta = (cta, variant) => {
+    if (!cta) return null;
+
+    const isExternal = /^https?:\/\//.test(cta.to) || cta.to.endsWith(".pdf");
+    const baseClass =
+      variant === "primary"
+        ? "inline-flex items-center justify-center rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition duration-300 hover:-translate-y-0.5 hover:bg-slate-100"
+        : "inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white/10";
+
+    if (isExternal) {
+      return (
+        <a
+          href={cta.to}
+          download={cta.to.endsWith(".pdf")}
+          target={cta.to.startsWith("http") ? "_blank" : undefined}
+          rel={cta.to.startsWith("http") ? "noreferrer" : undefined}
+          className={baseClass}
+        >
+          {cta.label}
+        </a>
+      );
+    }
+
+    return (
+      <Link to={cta.to} className={baseClass}>
+        {cta.label}
+      </Link>
+    );
+  };
+
   return (
     <section className="relative isolate overflow-hidden bg-slate-950 text-white">
       <div
@@ -40,22 +70,8 @@ const PageHero = ({
 
           {(primaryCta || secondaryCta) && (
             <div className="flex flex-col gap-4 sm:flex-row">
-              {primaryCta ? (
-                <Link
-                  to={primaryCta.to}
-                  className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition duration-300 hover:-translate-y-0.5 hover:bg-slate-100"
-                >
-                  {primaryCta.label}
-                </Link>
-              ) : null}
-              {secondaryCta ? (
-                <Link
-                  to={secondaryCta.to}
-                  className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white/10"
-                >
-                  {secondaryCta.label}
-                </Link>
-              ) : null}
+              {renderCta(primaryCta, "primary")}
+              {renderCta(secondaryCta, "secondary")}
             </div>
           )}
 
