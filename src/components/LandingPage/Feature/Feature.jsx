@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import featureImg from "../../../assets/images/feature-img.jpg";
 import videoIcon from "../../../assets/images/video-icon.png";
 import avatarIcon from "../../../assets/images/avatar-icon.jpg";
@@ -26,9 +25,9 @@ const Feature = () => {
                 3. Monitor your portfolio with up-to-date tracking features.
               </li>
             </ul>
-            <Link to="/track-investment">
-              <button className="btn">Learn More</button>
-            </Link>
+            <a href="#services" className="btn inline-flex">
+              Learn More
+            </a>
           </div>
 
           {/* Feature image */}

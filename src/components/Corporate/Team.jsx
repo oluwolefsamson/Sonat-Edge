@@ -1,0 +1,101 @@
+import { motion } from "framer-motion";
+import SectionHeading from "./SectionHeading";
+import { team } from "../../data/companyProfile";
+import { visuals } from "../../data/visuals";
+
+const TeamCard = ({ member, index }) => {
+  const avatar = visuals.teamPortraits[index % visuals.teamPortraits.length];
+
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{ duration: 0.45, delay: index * 0.05 }}
+      className="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-[0_14px_40px_rgba(15,23,42,0.08)]"
+    >
+      <div className="relative">
+        <img
+          src={avatar}
+          alt={member.name}
+          className="h-[320px] w-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_50%,rgba(2,6,23,0.88)_100%)]" />
+        <div className="absolute inset-x-0 bottom-0 p-5">
+          <span className="inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-white backdrop-blur-md">
+            {member.role}
+          </span>
+          <h3 className="mt-4 text-2xl font-semibold leading-none text-white">
+            {member.name}
+          </h3>
+          <p className="mt-3 text-sm leading-7 text-slate-200">
+            {member.position}
+          </p>
+        </div>
+      </div>
+    </motion.article>
+  );
+};
+
+const Team = () => {
+  return (
+    <section id="team" className="relative overflow-hidden bg-gray-50 text-slate-900">
+      <div className="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-sky-500/10 blur-3xl" />
+      <div className="mx-auto max-w-7xl px-6 py-24 sm:py-28">
+        <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+          <motion.div
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+            className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_24px_70px_rgba(15,23,42,0.12)]"
+          >
+            <img
+              src={visuals.teamPortraits[0]}
+              alt="Leadership and management visual"
+              className="h-[780px] w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.06)_0%,rgba(15,23,42,0.92)_100%)]" />
+            <div className="absolute inset-x-0 bottom-0 p-8 text-white">
+              <p className="text-[11px] uppercase tracking-[0.32em] text-sky-300">
+                Management structure
+              </p>
+              <h2 className="mt-3 text-4xl font-semibold leading-none">
+                Experienced leadership across delivery, finance, development, and operations.
+              </h2>
+              <p className="mt-4 max-w-md text-sm leading-7 text-slate-300">
+                The profile highlights a clear structure from CEO through key
+                officers, each responsible for keeping execution disciplined and
+                coordinated.
+              </p>
+            </div>
+          </motion.div>
+
+          <div>
+            <SectionHeading
+              eyebrow="Team"
+              title="Leadership and key officers"
+              description="The company profile includes top management, directors, and key departmental officers who drive execution across finance, implementation, business development, HR, administration, and IT."
+              tone="light"
+            />
+
+            <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-2">
+              {team.leadership.map((member, index) => (
+                <TeamCard key={member.name} member={member} index={index} />
+              ))}
+              {team.officers.map((member, index) => (
+                <TeamCard
+                  key={member.name}
+                  member={member}
+                  index={index + team.leadership.length}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Team;

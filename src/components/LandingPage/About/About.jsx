@@ -1,7 +1,4 @@
-
 import aboutImg from "../../../assets/images/about.jpg";
-
-import { Link } from "react-router-dom";
 import videoIcon from "../../../assets/images/video-icon.png";
 import avatarIcon from "../../../assets/images/avatar-icon.jpg";
 
@@ -66,10 +63,9 @@ const About = () => {
               moves in the agri market. Join us in revolutionizing how
               agricultural pricing is accessed and utilized.
             </p>
-
-            <Link to="/about">
-              <button className="btn">Learn More</button>
-            </Link>
+            <a href="#faq" className="btn inline-flex">
+              Learn More
+            </a>
           </div>
         </div>
       </div>

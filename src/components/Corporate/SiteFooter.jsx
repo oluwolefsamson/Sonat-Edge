@@ -1,0 +1,62 @@
+import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
+import { contacts, company } from "../../data/companyProfile";
+
+const SiteFooter = () => {
+  return (
+    <footer className="border-t border-white/10 bg-slate-950">
+      <div className="mx-auto max-w-7xl px-6 py-16 sm:py-20">
+        <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr_1fr]">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-sky-300">
+              Sonate Edge International Limited
+            </p>
+            <p className="mt-4 max-w-xl text-sm leading-7 text-slate-300">
+              {company.edge}
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.25em] text-white">
+              Offices
+            </h3>
+            <div className="space-y-3 text-sm text-slate-300">
+              <div className="flex gap-3">
+                <MapPin size={16} className="mt-1 shrink-0 text-sky-300" />
+                <p>{contacts.abuja.address}</p>
+              </div>
+              <div className="flex gap-3">
+                <MapPin size={16} className="mt-1 shrink-0 text-sky-300" />
+                <p>{contacts.kaduna.address}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.25em] text-white">
+              Contact
+            </h3>
+            <div className="space-y-3 text-sm text-slate-300">
+              <div className="flex gap-3">
+                <Phone size={16} className="mt-1 shrink-0 text-sky-300" />
+                <p>{contacts.phones.join(" | ")}</p>
+              </div>
+              <div className="flex gap-3">
+                <Mail size={16} className="mt-1 shrink-0 text-sky-300" />
+                <p>{contacts.email}</p>
+              </div>
+              <a
+                href="#top"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-sky-300 transition hover:text-white"
+              >
+                Back to top
+                <ArrowUpRight size={16} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default SiteFooter;

@@ -1,12 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 import { FaStar } from "react-icons/fa"; // Using FaStar from react-icons for star ratings
-import starIcon from "../../../assets/images/Star.png"; // Optional if you prefer an image-based star
 
 const HomeSupplierCard = ({ supplier }) => {
   const {
-    id,
     name,
     location,
     avgPricePerTon,
@@ -91,12 +88,12 @@ const HomeSupplierCard = ({ supplier }) => {
 
       {/* CTA */}
       <div className="flex items-center justify-between mt-6">
-        <Link
-          to={`/suppliers/${id}`}
+        <a
+          href="#contact"
           className="w-12 h-12 flex items-center bg-green-500 justify-center rounded-full bg-skyblue text-white hover:bg-green-800 transition-all duration-300"
         >
           <BsArrowRight className="w-6 h-6" />
-        </Link>
+        </a>
       </div>
     </div>
   );

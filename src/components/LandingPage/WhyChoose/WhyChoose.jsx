@@ -2,7 +2,6 @@ import React from "react";
 import icon01 from "../../../assets/images/icon01.png"; // Update to relevant icon for market tracking
 import icon02 from "../../../assets/images/icon02.png"; // Update to relevant icon for trend analysis
 import icon03 from "../../../assets/images/icon03.png"; // Update to relevant icon for price alerts
-import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 
 const WhyChoose = () => {
@@ -42,12 +41,12 @@ const WhyChoose = () => {
                 the latest market data.
               </p>
 
-              <Link
-                to="/track-prices"
+              <a
+                href="#features"
                 className="w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none"
               >
                 <BsArrowRight className="group-hover:text-white w-6 h-5" />
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -71,12 +70,12 @@ const WhyChoose = () => {
                 informed investment decisions.
               </p>
 
-              <Link
-                to="/price-trends"
+              <a
+                href="#services"
                 className="w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none"
               >
                 <BsArrowRight className="group-hover:text-white w-6 h-5" />
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -96,12 +95,12 @@ const WhyChoose = () => {
                 helping you optimize your investments.
               </p>
 
-              <Link
-                to="/price-alerts"
+              <a
+                href="#contact"
                 className="w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none"
               >
                 <BsArrowRight className="group-hover:text-white w-6 h-5" />
-              </Link>
+              </a>
             </div>
           </div>
         </div>

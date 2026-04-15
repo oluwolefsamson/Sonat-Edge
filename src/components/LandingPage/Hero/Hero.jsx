@@ -1,6 +1,3 @@
-
-
-
 import { useTranslation } from "react-i18next";
 import hero1 from "../../../assets/images/HeroImg/hero1.jpg";
 import hero2 from "../../../assets/images/HeroImg/hero2.jpg";
@@ -9,8 +6,6 @@ import hero4 from "../../../assets/images/HeroImg/hero4.jpg";
 import hero5 from "../../../assets/images/HeroImg/hero5.jpg";
 
 import { AvatarCirclesDemo } from "../Avatar/Avatar";
-import { Link } from "react-router-dom";
-
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -29,14 +24,12 @@ const Hero = () => {
               <p className="text__para">{t("hero.subtitle")}</p>
 
               <div className="flex gap-3 items-center">
-                <Link to="/track-prices">
-                  <button className="hero_btn1">{t("trackPrices")}</button>
-                </Link>
-                <Link to="/about">
-                  <button className="hero_btn2">
-                    {t("hero.buttons.learnMore")}
-                  </button>
-                </Link>
+                <a href="#features" className="hero_btn1 inline-flex">
+                  {t("trackPrices")}
+                </a>
+                <a href="#about" className="hero_btn2 inline-flex">
+                  {t("hero.buttons.learnMore")}
+                </a>
               </div>
 
               <div className="pt-[30px]">

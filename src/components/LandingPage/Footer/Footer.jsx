@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { RiLinkedinFill } from "react-icons/ri";
 import {
   AiFillYoutube,
@@ -31,50 +30,50 @@ const socialLinks = [
 
 const quickLinks01 = [
   {
-    path: "/home",
+    path: "#top",
     display: "Home",
   },
   {
-    path: "/about-us",
+    path: "#about",
     display: "About Price Tracker",
   },
   {
-    path: "/features",
+    path: "#features",
     display: "Key Features",
   },
   {
-    path: "/blog",
-    display: "Market Insights",
+    path: "#testimonials",
+    display: "User Stories",
   },
 ];
 
 const quickLinks02 = [
   {
-    path: "/track-prices",
+    path: "#features",
     display: "Track Prices",
   },
   {
-    path: "/compare-products",
+    path: "#services",
     display: "Compare Products",
   },
   {
-    path: "/price-alerts",
-    display: "Set Price Alerts",
+    path: "#billing",
+    display: "See Pricing",
   },
   {
-    path: "/pricing",
-    display: "Pricing Plans",
+    path: "#suppliers",
+    display: "Verified Suppliers",
   },
 ];
 
 const quickLinks03 = [
   {
-    path: "/contact",
-    display: "Contact Us",
+    path: "#faq",
+    display: "Support & FAQs",
   },
   {
-    path: "/support",
-    display: "Support & FAQs",
+    path: "#contact",
+    display: "Contact Us",
   },
 ];
 
@@ -128,7 +127,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="pb-16 pt-10">
+    <footer id="contact" className="pb-16 pt-10">
       <div className="container">
         <div className="flex justify-between flex-col md:flex-row flex-wrap gap-[30px]">
           <div>
@@ -159,12 +158,12 @@ const Footer = () => {
             <ul>
               {quickLinks01.map((item, index) => (
                 <li key={index} className="mb-4">
-                  <Link
-                    to={item.path}
+                  <a
+                    href={item.path}
                     className="text-[16px] leading-7 font-[400] text-textColor"
                   >
                     {item.display}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -176,12 +175,12 @@ const Footer = () => {
             <ul>
               {quickLinks02.map((item, index) => (
                 <li key={index} className="mb-4">
-                  <Link
-                    to={item.path}
+                  <a
+                    href={item.path}
                     className="text-[16px] leading-7 font-[400] text-textColor"
                   >
                     {item.display}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -193,12 +192,12 @@ const Footer = () => {
             <ul>
               {quickLinks03.map((item, index) => (
                 <li key={index} className="mb-4">
-                  <Link
-                    to={item.path}
+                  <a
+                    href={item.path}
                     className="text-[16px] leading-7 font-[400] text-textColor"
                   >
                     {item.display}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
