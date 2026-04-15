@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
+import BrandLoader from "./components/Corporate/BrandLoader";
 import SiteLayout from "./components/Corporate/SiteLayout";
 import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/LandingPage/Home";
@@ -9,6 +11,17 @@ import ProjectsPage from "./pages/ProjectsPage";
 import ContactPage from "./pages/ContactPage";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1200);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <BrandLoader />;
+  }
+
   return (
     <>
       <ScrollToTop />

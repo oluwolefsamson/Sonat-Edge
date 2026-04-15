@@ -1,20 +1,13 @@
 import React from "react";
-import LogoImg from "../../../assets/images/logo.png";
 
 const CropWiseLogo = () => {
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-3 rounded-2xl bg-white px-3 py-2 shadow-sm">
       <img
-        src={LogoImg}
-        alt="Logo"
-        className="h-[40px] lg:h-[80px]  rounded-full border-2 border-green-600"
+        src="/brand-logo.png"
+        alt="Sonat Edge International Limited"
+        className="h-10 w-auto sm:h-12"
       />
-      <div
-        className="flex items-center text-4xl font-black text-green-600"
-        style={{ fontFamily: "'Poiret One', cursive" }}
-      >
-        CropWise
-      </div>
     </div>
   );
 };

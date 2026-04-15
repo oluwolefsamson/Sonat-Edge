@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { contacts, company } from "../../data/companyProfile";
 import { navItems } from "../../data/siteContent";
+import BrandMark from "./BrandMark";
 
 const SiteFooter = () => {
   return (
@@ -9,6 +10,7 @@ const SiteFooter = () => {
       <div className="mx-auto max-w-7xl px-6 py-16 sm:py-20">
         <div className="grid gap-10 lg:grid-cols-[1.35fr_0.9fr_0.9fr]">
           <div>
+            <BrandMark className="mb-5 inline-flex" />
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-sky-300">
               Sonat Edge International Limited
             </p>
