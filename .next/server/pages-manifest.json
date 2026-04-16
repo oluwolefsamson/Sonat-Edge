@@ -1,12 +1,1 @@
-{
-  "/AboutPage": "pages/AboutPage.html",
-  "/BrochurePage": "pages/BrochurePage.html",
-  "/ContactPage": "pages/ContactPage.html",
-  "/LandingPage/Home": "pages/LandingPage/Home.html",
-  "/ProjectsPage": "pages/ProjectsPage.html",
-  "/ServicesPage": "pages/ServicesPage.html",
-  "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/404": "pages/404.html"
-}
+{}

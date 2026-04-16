@@ -7,6 +7,10 @@ import { visuals } from "../../data/visuals";
 
 const TeamCard = ({ member, index }) => {
   const avatar = member.image ?? visuals.teamPortraits[index % visuals.teamPortraits.length];
+  const avatarClass =
+    member.image === "/team/samson.jpeg"
+      ? "h-[230px] w-full rounded-lg object-cover object-center scale-[1.12] transform-gpu sm:h-[250px] sm:scale-[1.16]"
+      : "h-[230px] w-full rounded-lg object-cover object-[center_20%] scale-[1.12] transform-gpu sm:h-[250px] sm:scale-[1.16]";
 
   return (
     <motion.article
@@ -20,17 +24,17 @@ const TeamCard = ({ member, index }) => {
         <img
           src={avatar}
           alt={member.name}
-          className="h-[280px] w-full rounded-lg object-cover object-[center_20%] scale-[1.18] transform-gpu sm:scale-[1.25]"
+          className={avatarClass}
         />
       </div>
-      <div className="space-y-3 p-5">
+      <div className="space-y-2 p-4">
         <span className="inline-flex rounded-full border border-slate-200 bg-slate-100 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-700">
           {member.role}
         </span>
-        <h3 className="text-2xl font-bold leading-tight text-slate-900">
+        <h3 className="text-xl font-bold leading-snug text-slate-900">
           {member.name}
         </h3>
-        <p className="text-sm leading-7 text-slate-600">{member.position}</p>
+        <p className="text-sm leading-6 text-slate-600">{member.position}</p>
       </div>
     </motion.article>
   );
@@ -49,13 +53,13 @@ const Team = () => {
             transition={{ duration: 0.6 }}
             className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
           >
-            <img
-              src={visuals.teamFeatureImage}
-              alt="Leadership and management visual"
-              className="h-[780px] w-full rounded-lg object-cover"
-            />
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.04)_0%,rgba(15,23,42,0.88)_100%)]" />
-            <div className="absolute inset-x-0 bottom-0 p-8 text-white">
+        <img
+          src={visuals.teamFeatureImage}
+          alt="Leadership and management visual"
+          className="relative z-0 block h-[620px] w-full rounded-lg object-cover sm:h-[680px] lg:h-[640px]"
+        />
+            <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04)_0%,rgba(15,23,42,0.88)_100%)]" />
+            <div className="absolute inset-x-0 bottom-0 z-20 p-8 text-white">
               <p className="text-[11px] uppercase tracking-[0.32em] text-sky-300">
                 Management structure
               </p>
