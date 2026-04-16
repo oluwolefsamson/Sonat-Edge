@@ -9,8 +9,8 @@ const TeamCard = ({ member, index }) => {
   const avatar = member.image ?? visuals.teamPortraits[index % visuals.teamPortraits.length];
   const avatarClass =
     member.image === "/team/Samson.jpeg"
-      ? "h-[230px] w-full rounded-lg object-cover object-center scale-[1.12] transform-gpu sm:h-[250px] sm:scale-[1.16]"
-      : "h-[230px] w-full rounded-lg object-cover object-[center_20%] scale-[1.12] transform-gpu sm:h-[250px] sm:scale-[1.16]";
+      ? "aspect-[4/5] w-full rounded-lg object-cover object-center sm:h-[250px] sm:aspect-auto sm:scale-[1.16] sm:transform-gpu"
+      : "aspect-[4/5] w-full rounded-lg object-cover object-[center_15%] sm:h-[250px] sm:aspect-auto sm:scale-[1.16] sm:transform-gpu";
 
   return (
     <motion.article
@@ -46,7 +46,7 @@ const Team = () => {
       <div className="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-slate-300/30 blur-3xl" />
       <div className="mx-auto max-w-7xl px-6 py-20 sm:py-24">
         <div className="grid gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <motion.div
+            <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -56,7 +56,7 @@ const Team = () => {
         <img
           src={visuals.teamFeatureImage}
           alt="Leadership and management visual"
-          className="relative z-0 block h-[620px] w-full rounded-lg object-cover sm:h-[680px] lg:h-[640px]"
+          className="relative z-0 block aspect-[4/5] w-full rounded-lg object-cover object-center sm:aspect-auto sm:h-[680px] lg:h-[640px]"
         />
             <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04)_0%,rgba(15,23,42,0.88)_100%)]" />
             <div className="absolute inset-x-0 bottom-0 z-20 p-8 text-white">
