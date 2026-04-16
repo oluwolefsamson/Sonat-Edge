@@ -1,4 +1,4 @@
-import ServiceDetailPage from "@/pages/ServiceDetailPage";
+import ServiceDetailPage from "@/components/ServiceDetailPage";
 import { serviceItems } from "@/data/siteContent";
 import { redirect } from "next/navigation";
 
