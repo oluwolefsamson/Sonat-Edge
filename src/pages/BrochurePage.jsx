@@ -1,3 +1,5 @@
+"use client";
+
 import { Download, ExternalLink, FileText, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import PageHero from "../components/Corporate/PageHero";
@@ -11,6 +13,11 @@ const brochureHighlights = [
   "Management structure and key officers",
   "Core services and delivery capability",
   "Contact details for Abuja and Kaduna offices",
+];
+
+const mobilePreviewNotes = [
+  "Use the browser PDF viewer for smooth page swiping on phones.",
+  "Download the file if you need offline access or sharing.",
 ];
 
 const BrochurePage = () => {
@@ -99,11 +106,55 @@ const BrochurePage = () => {
                   PDF Preview
                 </p>
               </div>
-              <iframe
-                title="Sonat Edge company brochure"
-                src={brochureUrl}
-                className="h-[780px] w-full"
-              />
+              <div className="hidden md:block">
+                <iframe
+                  title="Sonat Edge company brochure"
+                  src={brochureUrl}
+                  className="h-[780px] w-full"
+                />
+              </div>
+
+              <div className="space-y-5 p-6 md:hidden">
+                <div className="rounded-3xl border border-dashed border-slate-300 bg-slate-50 p-6 text-center">
+                  <FileText className="mx-auto text-sky-700" size={32} />
+                  <p className="mt-4 text-lg font-semibold text-slate-900">
+                    Open the brochure in your PDF viewer
+                  </p>
+                  <p className="mt-2 text-sm leading-7 text-slate-600">
+                    Mobile browsers handle PDF swiping more reliably in a full-screen
+                    viewer than inside an embedded frame.
+                  </p>
+                </div>
+
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <a
+                    href={brochureUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-slate-800"
+                  >
+                    <ExternalLink size={16} />
+                    Open PDF viewer
+                  </a>
+                  <a
+                    href={brochureUrl}
+                    download
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:-translate-y-0.5 hover:bg-slate-50"
+                  >
+                    <Download size={16} />
+                    Download PDF
+                  </a>
+                </div>
+
+                <ul className="space-y-2">
+                  {mobilePreviewNotes.map((note) => (
+                    <li key={note} className="flex items-start gap-2 text-sm leading-6 text-slate-600">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-700" />
+                      <span>{note}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </motion.div>
           </div>
         </div>

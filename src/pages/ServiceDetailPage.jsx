@@ -1,19 +1,11 @@
+"use client";
+
 import { CheckCircle2, ArrowRight } from "lucide-react";
-import { Link, Navigate, useParams } from "react-router-dom";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import PageHero from "../components/Corporate/PageHero";
-import { serviceItems } from "../data/siteContent";
 
-const ServiceDetailPage = () => {
-  const { slug } = useParams();
-  const service = serviceItems.find((item) => item.slug === slug);
-
-  if (!service) {
-    return <Navigate to="/services" replace />;
-  }
-
-  const relatedServices = serviceItems.filter((item) => item.slug !== service.slug).slice(0, 3);
-
+const ServiceDetailPage = ({ service, relatedServices }) => {
   return (
     <div className="bg-white text-slate-900">
       <PageHero
@@ -88,7 +80,7 @@ const ServiceDetailPage = () => {
             {relatedServices.map((item) => (
               <Link
                 key={item.slug}
-                to={`/services/${item.slug}`}
+                href={`/services/${item.slug}`}
                 className="group flex items-center justify-between rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div>

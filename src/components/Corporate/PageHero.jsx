@@ -1,5 +1,7 @@
+"use client";
+
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const PageHero = ({
   eyebrow,
@@ -34,7 +36,7 @@ const PageHero = ({
     }
 
     return (
-      <Link to={cta.to} className={baseClass}>
+      <Link href={cta.to} className={baseClass}>
         {cta.label}
       </Link>
     );

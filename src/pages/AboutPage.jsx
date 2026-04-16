@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { CheckCircle2, ShieldCheck, Sparkles, Target, Users } from "lucide-react";
 import PageHero from "../components/Corporate/PageHero";

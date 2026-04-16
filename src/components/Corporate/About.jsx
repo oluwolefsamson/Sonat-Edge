@@ -1,3 +1,5 @@
+"use client";
+
 import { CheckCircle2, FileText, Target, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";

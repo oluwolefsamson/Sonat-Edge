@@ -1,5 +1,8 @@
+"use client";
+
 import { useEffect, useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { navItems } from "../../data/siteContent";
@@ -8,7 +11,7 @@ import BrandMark from "./BrandMark";
 const SiteHeader = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -19,12 +22,17 @@ const SiteHeader = () => {
 
   useEffect(() => {
     setOpen(false);
-  }, [location.pathname]);
+  }, [pathname]);
 
-  const linkClass = ({ isActive }) =>
+  const isActive = (itemPath) =>
+    itemPath === "/"
+      ? pathname === "/"
+      : pathname === itemPath || pathname.startsWith(`${itemPath}/`);
+
+  const linkClass = (itemPath) =>
     [
       "text-sm font-medium transition duration-200",
-      isActive ? "text-white" : "text-slate-300 hover:text-white",
+      isActive(itemPath) ? "text-white" : "text-slate-300 hover:text-white",
     ].join(" ");
 
   return (
@@ -36,26 +44,25 @@ const SiteHeader = () => {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <Link to="/" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-3">
           <BrandMark />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
           {navItems.map((item) => (
-            <NavLink
+            <Link
               key={item.to}
-              to={item.to}
-              end={item.to === "/"}
-              className={linkClass}
+              href={item.to}
+              className={linkClass(item.to)}
             >
               {item.label}
-            </NavLink>
+            </Link>
           ))}
         </nav>
 
         <div className="hidden lg:block">
           <Link
-            to="/contact"
+            href="/contact"
             className="inline-flex items-center rounded-full bg-sky-500 px-5 py-3 text-sm font-semibold text-slate-950 shadow-[0_18px_40px_rgba(14,165,233,0.16)] transition duration-300 hover:-translate-y-0.5 hover:bg-sky-400"
           >
             Contact Us
@@ -83,25 +90,22 @@ const SiteHeader = () => {
           >
             <div className="mx-auto flex max-w-7xl flex-col gap-4">
               {navItems.map((item) => (
-                <NavLink
+                <Link
                   key={item.to}
-                  to={item.to}
-                  end={item.to === "/"}
+                  href={item.to}
                   onClick={() => setOpen(false)}
-                  className={({ isActive }) =>
-                    [
-                      "rounded-2xl border px-4 py-3 text-sm font-medium transition",
-                      isActive
-                        ? "border-sky-400/30 bg-sky-500/10 text-white"
-                        : "border-white/5 bg-white/5 text-slate-200",
-                    ].join(" ")
-                  }
+                  className={[
+                    "rounded-2xl border px-4 py-3 text-sm font-medium transition",
+                    isActive(item.to)
+                      ? "border-sky-400/30 bg-sky-500/10 text-white"
+                      : "border-white/5 bg-white/5 text-slate-200",
+                  ].join(" ")}
                 >
                   {item.label}
-                </NavLink>
+                </Link>
               ))}
               <Link
-                to="/contact"
+                href="/contact"
                 onClick={() => setOpen(false)}
                 className="rounded-2xl bg-sky-500 px-4 py-3 text-center text-sm font-semibold text-slate-950 transition hover:bg-sky-400"
               >

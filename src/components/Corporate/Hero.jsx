@@ -1,6 +1,8 @@
+"use client";
+
 import { ArrowRight, Building2, ShieldCheck, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { company, differentiators } from "../../data/companyProfile";
 import { visuals } from "../../data/visuals";
 
@@ -45,14 +47,14 @@ const Hero = () => {
 
           <div className="flex flex-col gap-4 sm:flex-row">
             <Link
-              to="/services"
+              href="/services"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:bg-slate-100"
             >
               Our Services
               <ArrowRight size={16} />
             </Link>
             <Link
-              to="/contact"
+              href="/contact"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-transparent px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white/10"
             >
               Contact Us

@@ -1,3 +1,7 @@
+"use client";
+
+ "use client";
+
 const BrandLoader = () => {
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950">

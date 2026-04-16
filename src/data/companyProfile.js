@@ -158,6 +158,7 @@ export const team = {
       name: "Mr. Oluwole Samson O.",
       position: "I.T. Manager",
       role: "IT",
+      image: "/team/samson.jpeg",
     },
     {
       name: "Miss Teniola Victoria",
@@ -177,8 +178,8 @@ export const contacts = {
     label: "Kaduna Office",
     address: "6th Floor, Bank of Industry, 18, Waff Road, Kaduna.",
   },
-  phones: ["062-888825", "08073421389", "08054288271"],
-  email: "sonatedge@yahoo.com",
+  phones: ["08073421389", "08054288271"],
+  email: "info@sonatedge.com",
   website: "www.sonatedge.com",
 };
 

@@ -1,10 +1,12 @@
+"use client";
+
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
 import { team } from "../../data/companyProfile";
 import { visuals } from "../../data/visuals";
 
 const TeamCard = ({ member, index }) => {
-  const avatar = visuals.teamPortraits[index % visuals.teamPortraits.length];
+  const avatar = member.image ?? visuals.teamPortraits[index % visuals.teamPortraits.length];
 
   return (
     <motion.article
@@ -18,7 +20,7 @@ const TeamCard = ({ member, index }) => {
         <img
           src={avatar}
           alt={member.name}
-          className="h-[280px] w-full rounded-lg object-cover object-center"
+          className="h-[280px] w-full rounded-lg object-cover object-[center_20%] scale-[1.18] transform-gpu sm:scale-[1.25]"
         />
       </div>
       <div className="space-y-3 p-5">

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -73,36 +75,64 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-  .theme {
-    --animate-line-shadow: line-shadow 15s linear infinite;
-  }
-}
 
-@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   * {
-    @apply border-border;
+    box-sizing: border-box;
   }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
 
-@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+    font-family: "Manrope", sans-serif;
+  }
+
+  ::selection {
+    background: rgba(14, 165, 233, 0.24);
+    color: #0f172a;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Cormorant Garamond", serif;
+    letter-spacing: -0.03em;
+  }
+
+  p,
+  a,
+  button,
+  input,
+  textarea,
+  select {
+    font-family: "Manrope", sans-serif;
+  }
+
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground;
+}
+
+@layer components {
+  .corp-section {
+    @apply mx-auto max-w-7xl px-6 py-20 sm:py-24 lg:py-28;
+  }
+
+  .corp-panel {
+    @apply rounded-[2rem] border border-slate-200 bg-white shadow-[0_30px_80px_rgba(15,23,42,0.08)];
   }
 }
 
 @theme inline {
   @keyframes line-shadow {
-  0% {
-    background-position: 0 0;
+    0% {
+      background-position: 0 0;
     }
-  100% {
-    background-position: 100% -100%;
+    100% {
+      background-position: 100% -100%;
     }
   }
 }

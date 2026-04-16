@@ -1,3 +1,5 @@
+"use client";
+
 import {
   BriefcaseBusiness,
   Building2,

@@ -1,3 +1,5 @@
+"use client";
+
 import { MapPin, Phone, Mail, Globe, Send } from "lucide-react";
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";

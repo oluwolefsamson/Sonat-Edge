@@ -1,3 +1,5 @@
+"use client";
+
 const BrandMark = ({ compact = false, className = "" }) => {
   const wrapperClass = compact
     ? "flex items-center gap-3"

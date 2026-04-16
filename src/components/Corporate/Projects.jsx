@@ -1,3 +1,5 @@
+"use client";
+
 import { Building2, Printer, FileText } from "lucide-react";
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";

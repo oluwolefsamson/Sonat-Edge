@@ -1,5 +1,7 @@
+"use client";
+
 import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import PageHero from "../components/Corporate/PageHero";
 import { serviceItems, visuals } from "../data/siteContent";
@@ -40,7 +42,7 @@ const ServicesPage = () => {
                   <h3 className="text-2xl font-bold text-slate-900">{service.title}</h3>
                   <p className="text-sm leading-7 text-slate-600">{service.description}</p>
                   <Link
-                    to={`/services/${service.slug}`}
+                    href={`/services/${service.slug}`}
                     className="inline-flex items-center gap-2 text-sm font-semibold text-slate-950 transition hover:text-sky-700"
                   >
                     Learn More

@@ -1,15 +1,27 @@
-import { Outlet } from "react-router-dom";
+"use client";
+
+import { useEffect, useState } from "react";
 import { SiWhatsapp } from "react-icons/si";
+import BrandLoader from "./BrandLoader";
 import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
 
-const SiteLayout = () => {
+const SiteLayout = ({ children }) => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1200);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <BrandLoader />;
+  }
+
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <SiteHeader />
-      <main>
-        <Outlet />
-      </main>
+      <main>{children}</main>
       <SiteFooter />
       <a
         href="https://wa.me/2348037552910"

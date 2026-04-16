@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import PageHero from "../components/Corporate/PageHero";
 import { projectItems, visuals } from "../data/siteContent";

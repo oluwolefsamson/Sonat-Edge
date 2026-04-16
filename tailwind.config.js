@@ -1,7 +1,9 @@
+import tailwindcssAnimate from "tailwindcss-animate";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ["class"],
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./app/**/*.{js,ts,jsx,tsx}", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       backdropBlur: {
@@ -118,9 +120,8 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
   plugins: [
-    require("tailwindcss-animate"),
+    tailwindcssAnimate,
     function ({ addUtilities }) {
       addUtilities({
         ".no-scrollbar": {

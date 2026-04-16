@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { contacts, company } from "../../data/companyProfile";
 import { navItems } from "../../data/siteContent";
@@ -27,7 +29,7 @@ const SiteFooter = () => {
               {navItems.map((item) => (
                 <Link
                   key={item.to}
-                  to={item.to}
+                  href={item.to}
                   className="block transition hover:text-white"
                 >
                   {item.label}
@@ -60,7 +62,7 @@ const SiteFooter = () => {
                 <p>{contacts.email}</p>
               </div>
               <Link
-                to="/"
+                href="/"
                 className="inline-flex items-center gap-2 text-sm font-semibold text-sky-300 transition hover:text-white"
               >
                 Back to home
