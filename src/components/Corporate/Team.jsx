@@ -8,7 +8,7 @@ import { visuals } from "../../data/visuals";
 const TeamCard = ({ member, index }) => {
   const avatar = member.image ?? visuals.teamPortraits[index % visuals.teamPortraits.length];
   const avatarClass =
-    member.image === "/team/samson.jpeg"
+    member.image === "/team/Samson.jpeg"
       ? "h-[230px] w-full rounded-lg object-cover object-center scale-[1.12] transform-gpu sm:h-[250px] sm:scale-[1.16]"
       : "h-[230px] w-full rounded-lg object-cover object-[center_20%] scale-[1.12] transform-gpu sm:h-[250px] sm:scale-[1.16]";
 

@@ -158,7 +158,7 @@ export const team = {
       name: "Mr. Oluwole Samson O.",
       position: "I.T. Manager",
       role: "IT",
-      image: "/team/samson.jpeg",
+      image: "/team/Samson.jpeg",
     },
     {
       name: "Miss Teniola Victoria",
