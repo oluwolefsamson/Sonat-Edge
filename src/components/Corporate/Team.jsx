@@ -146,7 +146,7 @@ const Team = () => {
       </div>
 
       <Dialog open={Boolean(selectedMember)} onOpenChange={(open) => !open && setSelectedMember(null)}>
-        <DialogContent className="max-w-4xl overflow-hidden border-slate-200 bg-white p-0 shadow-2xl">
+        <DialogContent className="max-w-4xl overflow-x-hidden border-slate-200 bg-white p-0 shadow-2xl">
           {selectedMember && (
             <div className="grid gap-0 md:grid-cols-[1fr_1.1fr]">
               <div className="relative bg-slate-950">
@@ -155,8 +155,8 @@ const Team = () => {
                   alt={selectedMember.name}
                   className={
                     selectedMember.image
-                      ? "h-full min-h-[320px] w-full object-cover object-center md:min-h-[560px]"
-                      : "h-full min-h-[320px] w-full bg-white object-contain object-top p-4 md:min-h-[560px]"
+                      ? "h-full min-h-[220px] w-full object-cover object-center sm:min-h-[320px] md:min-h-[560px]"
+                      : "h-full min-h-[220px] w-full bg-white object-contain object-top p-4 sm:min-h-[320px] md:min-h-[560px]"
                   }
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.06)_0%,rgba(15,23,42,0.55)_100%)]" />
