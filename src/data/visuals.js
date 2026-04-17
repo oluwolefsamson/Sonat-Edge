@@ -21,6 +21,7 @@ export const visuals = {
     "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80",
   teamFeatureImage:
     "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1800&q=80",
+  teamFallbackProfileImage: "/team/111.png",
   testimonialFeatureImage:
     "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1800&q=80",
   testimonialOne:

@@ -78,7 +78,7 @@ export const projects = [
     title: "Commercial and infrastructure delivery",
     description:
       "Structured delivery for complex builds where timing, quality, and coordination matter.",
-    accent: "from-slate-900 via-slate-800 to-sky-900",
+    accent: "from-slate-900 via-emerald-900 to-green-900",
     image: "projectOne",
   },
   {
@@ -86,7 +86,7 @@ export const projects = [
     title: "Corporate branding and production",
     description:
       "High-impact print work for corporate identity, campaigns, and polished promotional assets.",
-    accent: "from-sky-900 via-cyan-900 to-slate-900",
+    accent: "from-emerald-900 via-green-900 to-slate-900",
     image: "projectTwo",
   },
   {
@@ -102,7 +102,7 @@ export const projects = [
     title: "Capacity building programs",
     description:
       "Practical learning sessions designed to strengthen leadership, communication, and execution.",
-    accent: "from-slate-900 via-sky-900 to-cyan-900",
+    accent: "from-slate-900 via-emerald-900 to-green-900",
     image: "projectFour",
   },
   {
@@ -121,6 +121,7 @@ export const team = {
       name: "Mr. Adediran Oluwaseyi",
       position: "Chief Executive Officer",
       role: "CEO",
+      image: "/team/seyi.png",
     },
     {
       name: "Mr. Owolabi Oluwaseun",
@@ -143,6 +144,7 @@ export const team = {
       name: "Mr. Victor Owouko",
       position: "Head of Human Resources",
       role: "HR",
+      image: "/team/victor.png",
     },
     {
       name: "Mr. Adaji James Matthew",
@@ -158,12 +160,18 @@ export const team = {
       name: "Mr. Oluwole Samson O.",
       position: "I.T. Manager",
       role: "IT",
-      image: "/team/Samson.jpeg",
+      image: "/team/samson.png",
     },
     {
       name: "Miss Teniola Victoria",
       position: "Administrative Officer",
       role: "Admin",
+    },
+    {
+      name: "Mary",
+      position: "Team Member",
+      role: "Staff",
+      image: "/team/mary.png",
     },
   ],
 };

@@ -63,7 +63,7 @@ const SiteHeader = () => {
         <div className="hidden lg:block">
           <Link
             href="/contact"
-            className="inline-flex items-center rounded-full bg-sky-500 px-5 py-3 text-sm font-semibold text-slate-950 shadow-[0_18px_40px_rgba(14,165,233,0.16)] transition duration-300 hover:-translate-y-0.5 hover:bg-sky-400"
+            className="inline-flex items-center rounded-full bg-emerald-500 px-5 py-3 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(16,185,129,0.16)] transition duration-300 hover:-translate-y-0.5 hover:bg-emerald-400"
           >
             Contact Us
           </Link>
@@ -97,7 +97,7 @@ const SiteHeader = () => {
                   className={[
                     "rounded-2xl border px-4 py-3 text-sm font-medium transition",
                     isActive(item.to)
-                      ? "border-sky-400/30 bg-sky-500/10 text-white"
+                      ? "border-emerald-400/30 bg-emerald-500/10 text-white"
                       : "border-white/5 bg-white/5 text-slate-200",
                   ].join(" ")}
                 >
@@ -107,7 +107,7 @@ const SiteHeader = () => {
               <Link
                 href="/contact"
                 onClick={() => setOpen(false)}
-                className="rounded-2xl bg-sky-500 px-4 py-3 text-center text-sm font-semibold text-slate-950 transition hover:bg-sky-400"
+                className="rounded-2xl bg-emerald-500 px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-emerald-400"
               >
                 Contact Us
               </Link>

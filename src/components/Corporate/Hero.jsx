@@ -32,7 +32,7 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="relative z-10 max-w-3xl space-y-6"
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-sky-100 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-emerald-100 backdrop-blur-sm">
             <Sparkles size={14} />
             Corporate Profile
           </div>
@@ -91,7 +91,7 @@ const Hero = () => {
             <div className="relative grid gap-5">
               <div className="grid gap-4 sm:grid-cols-[1fr_auto]">
                 <div>
-                  <p className="text-[11px] uppercase tracking-[0.32em] text-sky-300">
+                  <p className="text-[11px] uppercase tracking-[0.32em] text-emerald-300">
                     Corporate Identity
                   </p>
                   <h2 className="mt-3 text-3xl font-semibold leading-none text-white">
@@ -101,7 +101,7 @@ const Hero = () => {
                     {company.tagline}
                   </p>
                 </div>
-                <div className="flex h-16 w-16 items-center justify-center rounded-[1.35rem] border border-white/10 bg-white/5 text-sky-300">
+                <div className="flex h-16 w-16 items-center justify-center rounded-[1.35rem] border border-white/10 bg-white/5 text-emerald-300">
                   <Building2 size={26} />
                 </div>
               </div>
@@ -127,7 +127,7 @@ const Hero = () => {
                     key={item}
                     className="flex items-start gap-3 rounded-2xl border border-white/5 bg-white/[0.03] p-4"
                   >
-                    <div className="mt-1 rounded-full bg-sky-500/10 p-2 text-sky-300">
+                    <div className="mt-1 rounded-full bg-emerald-500/10 p-2 text-emerald-300">
                       {index % 2 === 0 ? <Building2 size={16} /> : <ShieldCheck size={16} />}
                     </div>
                     <p className="text-sm leading-6 text-slate-300">{item}</p>

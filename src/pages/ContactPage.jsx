@@ -31,7 +31,7 @@ const ContactPage = () => {
                   className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm"
                 >
                   <div className="flex items-center gap-3">
-                    <MapPin className="text-sky-700" size={18} />
+                    <MapPin className="text-emerald-700" size={18} />
                     <h3 className="text-lg font-semibold text-slate-900">{office.label}</h3>
                   </div>
                   <p className="mt-4 text-sm leading-7 text-slate-600">{office.address}</p>
@@ -43,11 +43,11 @@ const ContactPage = () => {
               <h3 className="text-2xl font-bold text-slate-900">Direct contact</h3>
               <div className="mt-5 space-y-4 text-sm text-slate-600">
                 <div className="flex gap-3">
-                  <Phone size={18} className="mt-0.5 shrink-0 text-sky-700" />
+                  <Phone size={18} className="mt-0.5 shrink-0 text-emerald-700" />
                   <p>{contacts.phones.join(" | ")}</p>
                 </div>
                 <div className="flex gap-3">
-                  <Mail size={18} className="mt-0.5 shrink-0 text-sky-700" />
+                  <Mail size={18} className="mt-0.5 shrink-0 text-emerald-700" />
                   <p>{contacts.email}</p>
                 </div>
               </div>
@@ -62,7 +62,7 @@ const ContactPage = () => {
             onSubmit={(event) => event.preventDefault()}
             className="rounded-3xl border border-slate-200 bg-white p-8 shadow-[0_24px_70px_rgba(15,23,42,0.12)]"
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-700">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">
               Send a message
             </p>
             <h3 className="mt-4 text-4xl font-bold tracking-tight text-slate-900">
@@ -81,7 +81,7 @@ const ContactPage = () => {
                 <input
                   type="text"
                   placeholder="Your name"
-                  className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-sky-500/40"
+                  className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-500/40"
                 />
               </label>
               <label className="space-y-2">
@@ -91,7 +91,7 @@ const ContactPage = () => {
                 <input
                   type="email"
                   placeholder="you@example.com"
-                  className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-sky-500/40"
+                  className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-500/40"
                 />
               </label>
               <label className="space-y-2">
@@ -101,7 +101,7 @@ const ContactPage = () => {
                 <textarea
                   rows="7"
                   placeholder="Tell us about your project"
-                  className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-sky-500/40"
+                  className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-500/40"
                 />
               </label>
             </div>
@@ -120,7 +120,7 @@ const ContactPage = () => {
         <div className="mx-auto max-w-7xl">
           <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_24px_70px_rgba(15,23,42,0.14)]">
             <div className="border-b border-slate-200 px-6 py-4">
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-sky-700">
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-700">
                 Abuja Office Map
               </p>
             </div>

@@ -43,7 +43,7 @@ const BrochurePage = () => {
               className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm"
             >
               <div className="flex items-center gap-3">
-                <FileText className="text-sky-700" size={20} />
+                <FileText className="text-emerald-700" size={20} />
                 <h2 className="text-2xl font-bold text-slate-900">Brochure overview</h2>
               </div>
               <p className="mt-4 text-[15px] leading-8 text-slate-600">
@@ -57,14 +57,14 @@ const BrochurePage = () => {
                   key={item}
                   className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
                 >
-                  <CheckCircle2 className="mt-0.5 shrink-0 text-sky-700" size={18} />
+                  <CheckCircle2 className="mt-0.5 shrink-0 text-emerald-700" size={18} />
                   <p className="text-sm leading-7 text-slate-700">{item}</p>
                 </div>
               ))}
             </div>
 
             <div className="rounded-3xl border border-slate-200 bg-slate-950 p-6 text-white shadow-[0_24px_70px_rgba(15,23,42,0.14)]">
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-sky-300">
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-emerald-300">
                 Download
               </p>
               <p className="mt-4 text-sm leading-7 text-slate-300">
@@ -102,7 +102,7 @@ const BrochurePage = () => {
               className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_24px_70px_rgba(15,23,42,0.12)]"
             >
               <div className="border-b border-slate-200 px-6 py-4">
-                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-sky-700">
+                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-700">
                   PDF Preview
                 </p>
               </div>
@@ -116,7 +116,7 @@ const BrochurePage = () => {
 
               <div className="space-y-5 p-6 md:hidden">
                 <div className="rounded-3xl border border-dashed border-slate-300 bg-slate-50 p-6 text-center">
-                  <FileText className="mx-auto text-sky-700" size={32} />
+                  <FileText className="mx-auto text-emerald-700" size={32} />
                   <p className="mt-4 text-lg font-semibold text-slate-900">
                     Open the brochure in your PDF viewer
                   </p>
@@ -149,7 +149,7 @@ const BrochurePage = () => {
                 <ul className="space-y-2">
                   {mobilePreviewNotes.map((note) => (
                     <li key={note} className="flex items-start gap-2 text-sm leading-6 text-slate-600">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-700" />
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-700" />
                       <span>{note}</span>
                     </li>
                   ))}
@@ -163,7 +163,7 @@ const BrochurePage = () => {
       <section className="bg-slate-50 px-6 py-20">
         <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-3">
           <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-sky-700">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-emerald-700">
               Services
             </p>
             <div className="mt-4 space-y-3">
@@ -176,7 +176,7 @@ const BrochurePage = () => {
           </div>
 
           <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-sky-700">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-emerald-700">
               Values
             </p>
             <div className="mt-4 space-y-3">
@@ -189,7 +189,7 @@ const BrochurePage = () => {
           </div>
 
           <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-sky-700">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-emerald-700">
               Contact
             </p>
             <p className="mt-4 text-sm leading-7 text-slate-600">

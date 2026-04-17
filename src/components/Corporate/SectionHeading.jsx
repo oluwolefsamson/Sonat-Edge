@@ -19,8 +19,8 @@ const SectionHeading = ({
   const descriptionClass = tone === "light" ? "text-slate-600" : "text-slate-300";
   const eyebrowClass =
     tone === "light"
-      ? "border-sky-500/15 bg-sky-500/10 text-sky-700"
-      : "border-sky-500/20 bg-sky-500/10 text-sky-200";
+      ? "border-emerald-600/15 bg-emerald-600/10 text-emerald-700"
+      : "border-emerald-400/20 bg-emerald-400/10 text-emerald-200";
 
   return (
     <motion.div

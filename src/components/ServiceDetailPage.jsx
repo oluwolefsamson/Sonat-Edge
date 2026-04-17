@@ -35,7 +35,7 @@ const ServiceDetailPage = ({ service, relatedServices }) => {
 
           <div className="space-y-8">
             <div className="space-y-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-700">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">
                 What we deliver
               </p>
               <h2 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
@@ -52,7 +52,7 @@ const ServiceDetailPage = ({ service, relatedServices }) => {
                   key={benefit}
                   className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-5"
                 >
-                  <CheckCircle2 className="mt-0.5 shrink-0 text-sky-700" size={18} />
+                  <CheckCircle2 className="mt-0.5 shrink-0 text-emerald-700" size={18} />
                   <p className="text-sm leading-7 text-slate-700">{benefit}</p>
                 </div>
               ))}
@@ -64,7 +64,7 @@ const ServiceDetailPage = ({ service, relatedServices }) => {
       <section className="bg-slate-50 py-20 px-6">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.95fr] lg:items-center">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-700">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">
               Related services
             </p>
             <h3 className="mt-4 text-4xl font-bold tracking-tight text-slate-900">

@@ -96,7 +96,7 @@ const AboutPage = () => {
               transition={{ duration: 0.5 }}
               className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm"
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-700">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">
                 Mission
               </p>
               <p className="mt-4 text-[15px] leading-8 text-slate-600">
@@ -110,7 +110,7 @@ const AboutPage = () => {
               transition={{ duration: 0.5, delay: 0.08 }}
               className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm"
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-700">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">
                 Vision
               </p>
               <p className="mt-4 text-[15px] leading-8 text-slate-600">

@@ -18,7 +18,7 @@ const PageHero = ({
     const isExternal = /^https?:\/\//.test(cta.to) || cta.to.endsWith(".pdf");
     const baseClass =
       variant === "primary"
-        ? "inline-flex items-center justify-center rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition duration-300 hover:-translate-y-0.5 hover:bg-slate-100"
+        ? "inline-flex items-center justify-center rounded-full bg-emerald-500 px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-emerald-400"
         : "inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white/10";
 
     if (isExternal) {
@@ -59,7 +59,7 @@ const PageHero = ({
           className="relative z-10 max-w-3xl space-y-6"
         >
           {eyebrow ? (
-            <span className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.3em] text-sky-100 backdrop-blur">
+            <span className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.3em] text-emerald-100 backdrop-blur">
               {eyebrow}
             </span>
           ) : null}

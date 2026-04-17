@@ -13,7 +13,7 @@ const SiteFooter = () => {
         <div className="grid gap-10 lg:grid-cols-[1.35fr_0.9fr_0.9fr]">
           <div>
             <BrandMark className="mb-5 inline-flex" />
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-sky-300">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-300">
               Sonat Edge International Limited
             </p>
             <p className="mt-4 max-w-xl text-sm leading-7 text-slate-300">
@@ -38,11 +38,11 @@ const SiteFooter = () => {
             </div>
             <div className="space-y-3 pt-4 text-sm text-slate-300">
               <div className="flex gap-3">
-                <MapPin size={16} className="mt-1 shrink-0 text-sky-300" />
+                <MapPin size={16} className="mt-1 shrink-0 text-emerald-300" />
                 <p>{contacts.abuja.address}</p>
               </div>
               <div className="flex gap-3">
-                <MapPin size={16} className="mt-1 shrink-0 text-sky-300" />
+                <MapPin size={16} className="mt-1 shrink-0 text-emerald-300" />
                 <p>{contacts.kaduna.address}</p>
               </div>
             </div>
@@ -54,16 +54,16 @@ const SiteFooter = () => {
             </h3>
             <div className="space-y-3 text-sm text-slate-300">
               <div className="flex gap-3">
-                <Phone size={16} className="mt-1 shrink-0 text-sky-300" />
+                <Phone size={16} className="mt-1 shrink-0 text-emerald-300" />
                 <p>{contacts.phones.join(" | ")}</p>
               </div>
               <div className="flex gap-3">
-                <Mail size={16} className="mt-1 shrink-0 text-sky-300" />
+                <Mail size={16} className="mt-1 shrink-0 text-emerald-300" />
                 <p>{contacts.email}</p>
               </div>
               <Link
                 href="/"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-sky-300 transition hover:text-white"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-300 transition hover:text-white"
               >
                 Back to home
                 <ArrowUpRight size={16} />

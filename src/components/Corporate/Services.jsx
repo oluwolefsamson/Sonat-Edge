@@ -41,7 +41,7 @@ const Services = () => {
             />
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.08)_0%,rgba(2,6,23,0.88)_100%)]" />
             <div className="absolute inset-x-0 bottom-0 p-8">
-              <p className="text-[11px] uppercase tracking-[0.32em] text-sky-300">
+              <p className="text-[11px] uppercase tracking-[0.32em] text-emerald-300">
                 Integrated services
               </p>
               <h2 className="mt-3 max-w-md text-4xl font-semibold leading-[1] text-white sm:text-5xl">

@@ -33,7 +33,7 @@ const About = () => {
                 className="h-[540px] w-full rounded-lg object-cover object-center"
               />
               <div className="absolute inset-x-5 bottom-5 rounded-2xl border border-white/10 bg-slate-950/80 p-5 text-white shadow-sm backdrop-blur-sm">
-                <p className="text-[11px] uppercase tracking-[0.32em] text-sky-300">
+                <p className="text-[11px] uppercase tracking-[0.32em] text-emerald-300">
                   Company overview
                 </p>
                 <p className="mt-3 text-sm leading-7 text-slate-300">
@@ -83,7 +83,7 @@ const About = () => {
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3.5 text-sm font-semibold text-slate-900 transition hover:-translate-y-0.5 hover:border-sky-400/40"
+                className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3.5 text-sm font-semibold text-slate-900 transition hover:-translate-y-0.5 hover:border-emerald-400/40"
               >
                 Contact Office
               </a>

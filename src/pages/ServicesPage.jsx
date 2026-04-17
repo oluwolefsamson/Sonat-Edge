@@ -43,7 +43,7 @@ const ServicesPage = () => {
                   <p className="text-sm leading-7 text-slate-600">{service.description}</p>
                   <Link
                     href={`/services/${service.slug}`}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-slate-950 transition hover:text-sky-700"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-slate-950 transition hover:text-emerald-700"
                   >
                     Learn More
                     <ArrowRight size={16} />
