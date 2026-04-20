@@ -146,11 +146,11 @@ const Team = () => {
       </div>
 
       <Dialog open={Boolean(selectedMember)} onOpenChange={(open) => !open && setSelectedMember(null)}>
-        <DialogContent className="w-[calc(100vw-1rem)] max-w-4xl overflow-hidden border-slate-200 bg-white p-0 shadow-2xl sm:w-[calc(100vw-2rem)]">
+        <DialogContent className="w-[calc(100vw-2rem)] max-w-[34rem] overflow-hidden border-slate-200 bg-white p-0 shadow-2xl sm:w-[calc(100vw-3rem)] sm:max-w-4xl sm:rounded-3xl">
           {selectedMember && (
-            <div className="flex max-h-[calc(100vh-1rem)] flex-col md:max-h-[calc(100vh-2rem)] md:grid md:grid-cols-[1fr_1.1fr]">
+            <div className="flex max-h-[calc(100vh-5rem)] flex-col md:max-h-[calc(100vh-2rem)] md:grid md:grid-cols-[1fr_1.1fr]">
               <div className="relative bg-slate-950 md:min-h-full">
-                <div className="relative aspect-[4/5] w-full overflow-hidden sm:aspect-[16/11] md:aspect-auto md:h-full">
+                <div className="relative aspect-[3/4] w-full overflow-hidden sm:aspect-[16/11] md:aspect-auto md:h-full">
                   <img
                     src={selectedMember.avatar}
                     alt={selectedMember.name}
@@ -161,34 +161,34 @@ const Team = () => {
                     }`}
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.06)_0%,rgba(15,23,42,0.55)_100%)]" />
-                  <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-8">
+                  <div className="absolute inset-x-0 bottom-0 p-4 text-white sm:p-8">
                     <p className="text-[11px] uppercase tracking-[0.28em] text-emerald-300">
                       Team profile
                     </p>
-                    <h3 className="mt-3 text-2xl font-semibold leading-tight sm:text-4xl">
+                    <h3 className="mt-2 text-xl font-semibold leading-tight sm:mt-3 sm:text-4xl">
                       {selectedMember.name}
                     </h3>
-                    <p className="mt-2 max-w-sm text-sm leading-6 text-slate-200">
+                    <p className="mt-2 max-w-sm text-xs leading-5 text-slate-200 sm:text-sm sm:leading-6">
                       {selectedMember.position}
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="overflow-y-auto bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] p-6 sm:p-8 md:p-10">
+              <div className="overflow-y-auto bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] p-5 sm:p-8 md:p-10">
                 <DialogHeader className="text-left">
                   <p className="text-xs font-semibold uppercase tracking-[0.28em] text-emerald-700">
                     Profile details
                   </p>
-                  <DialogTitle className="mt-3 text-2xl font-semibold text-slate-900 sm:text-3xl">
+                  <DialogTitle className="mt-2 text-2xl font-semibold text-slate-900 sm:mt-3 sm:text-3xl">
                     {selectedMember.name}
                   </DialogTitle>
-                  <DialogDescription className="mt-3 max-w-xl text-sm leading-7 text-slate-600">
+                  <DialogDescription className="mt-2 max-w-xl text-sm leading-7 text-slate-600">
                     {selectedMember.position} with responsibility for {selectedMember.role.toLowerCase()} operations.
                   </DialogDescription>
                 </DialogHeader>
 
-                <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                <div className="mt-6 grid gap-4 sm:grid-cols-2">
                   <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
                     <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
                       Role
@@ -207,7 +207,7 @@ const Team = () => {
                   </div>
                 </div>
 
-                <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                <div className="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:p-5">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
                     Summary
                   </p>
@@ -216,7 +216,7 @@ const Team = () => {
                   </p>
                 </div>
 
-                <div className="mt-8 flex flex-wrap gap-3">
+                <div className="mt-6 flex flex-wrap gap-3">
                   <span className="inline-flex rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-700">
                     {selectedMember.role}
                   </span>

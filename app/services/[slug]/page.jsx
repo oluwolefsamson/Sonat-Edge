@@ -2,6 +2,12 @@ import ServiceDetailPage from "@/components/ServiceDetailPage";
 import { serviceItems } from "@/data/siteContent";
 import { redirect } from "next/navigation";
 
+export function generateStaticParams() {
+  return serviceItems.map((item) => ({
+    slug: item.slug,
+  }));
+}
+
 export default function Page({ params }) {
   const service = serviceItems.find((item) => item.slug === params.slug);
 
