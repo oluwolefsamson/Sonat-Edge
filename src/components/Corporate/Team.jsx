@@ -146,34 +146,36 @@ const Team = () => {
       </div>
 
       <Dialog open={Boolean(selectedMember)} onOpenChange={(open) => !open && setSelectedMember(null)}>
-        <DialogContent className="max-w-4xl overflow-x-hidden border-slate-200 bg-white p-0 shadow-2xl">
+        <DialogContent className="w-[calc(100vw-1rem)] max-w-4xl overflow-hidden border-slate-200 bg-white p-0 shadow-2xl sm:w-[calc(100vw-2rem)]">
           {selectedMember && (
-            <div className="grid gap-0 md:grid-cols-[1fr_1.1fr]">
-              <div className="relative bg-slate-950">
-                <img
-                  src={selectedMember.avatar}
-                  alt={selectedMember.name}
-                  className={
-                    selectedMember.image
-                      ? "h-full min-h-[220px] w-full object-cover object-center sm:min-h-[320px] md:min-h-[560px]"
-                      : "h-full min-h-[220px] w-full bg-white object-contain object-top p-4 sm:min-h-[320px] md:min-h-[560px]"
-                  }
-                />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.06)_0%,rgba(15,23,42,0.55)_100%)]" />
-                <div className="absolute inset-x-0 bottom-0 p-6 text-white sm:p-8">
-                  <p className="text-[11px] uppercase tracking-[0.28em] text-emerald-300">
-                    Team profile
-                  </p>
-                  <h3 className="mt-3 text-3xl font-semibold leading-tight sm:text-4xl">
-                    {selectedMember.name}
-                  </h3>
-                  <p className="mt-2 max-w-sm text-sm leading-6 text-slate-200">
-                    {selectedMember.position}
-                  </p>
+            <div className="flex max-h-[calc(100vh-1rem)] flex-col md:max-h-[calc(100vh-2rem)] md:grid md:grid-cols-[1fr_1.1fr]">
+              <div className="relative bg-slate-950 md:min-h-full">
+                <div className="relative aspect-[4/5] w-full overflow-hidden sm:aspect-[16/11] md:aspect-auto md:h-full">
+                  <img
+                    src={selectedMember.avatar}
+                    alt={selectedMember.name}
+                    className={`h-full w-full ${
+                      selectedMember.image
+                        ? "object-cover object-center"
+                        : "bg-white object-contain object-top p-4"
+                    }`}
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.06)_0%,rgba(15,23,42,0.55)_100%)]" />
+                  <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-8">
+                    <p className="text-[11px] uppercase tracking-[0.28em] text-emerald-300">
+                      Team profile
+                    </p>
+                    <h3 className="mt-3 text-2xl font-semibold leading-tight sm:text-4xl">
+                      {selectedMember.name}
+                    </h3>
+                    <p className="mt-2 max-w-sm text-sm leading-6 text-slate-200">
+                      {selectedMember.position}
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <div className="bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] p-6 sm:p-8 md:p-10">
+              <div className="overflow-y-auto bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] p-6 sm:p-8 md:p-10">
                 <DialogHeader className="text-left">
                   <p className="text-xs font-semibold uppercase tracking-[0.28em] text-emerald-700">
                     Profile details

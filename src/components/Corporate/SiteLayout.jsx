@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { SiWhatsapp } from "react-icons/si";
+import { Toaster } from "sonner";
 import BrandLoader from "./BrandLoader";
 import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
@@ -23,6 +24,16 @@ const SiteLayout = ({ children }) => {
       <SiteHeader />
       <main>{children}</main>
       <SiteFooter />
+      <Toaster
+        position="top-right"
+        richColors
+        closeButton
+        toastOptions={{
+          classNames: {
+            toast: "rounded-2xl border border-slate-200 shadow-[0_18px_50px_rgba(15,23,42,0.12)]",
+          },
+        }}
+      />
       <a
         href="https://wa.me/2348037552910"
         target="_blank"

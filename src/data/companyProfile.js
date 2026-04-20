@@ -168,7 +168,7 @@ export const team = {
       role: "Admin",
     },
     {
-      name: "Mary",
+      name: "Aganu Mary",
       position: "Team Member",
       role: "Staff",
       image: "/team/mary.png",

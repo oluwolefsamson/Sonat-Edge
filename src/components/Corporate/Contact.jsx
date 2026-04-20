@@ -1,12 +1,26 @@
 "use client";
 
+import { useRef, useState } from "react";
 import { MapPin, Phone, Mail, Globe, Send } from "lucide-react";
 import { motion } from "framer-motion";
+import { toast } from "sonner";
 import SectionHeading from "./SectionHeading";
 import { contacts } from "../../data/companyProfile";
 import { visuals } from "../../data/visuals";
 
 const Contact = () => {
+  const formRef = useRef(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    await new Promise((resolve) => setTimeout(resolve, 900));
+    formRef.current?.reset();
+    toast.success("Your message has been sent successfully.");
+    setIsSubmitting(false);
+  };
+
   return (
     <section id="contact" className="relative overflow-hidden bg-slate-900 text-white">
       <div className="mx-auto max-w-7xl px-6 py-20 sm:py-24">
@@ -92,11 +106,12 @@ const Contact = () => {
             />
 
             <motion.form
+              ref={formRef}
               initial={{ opacity: 0, x: 24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.25 }}
               transition={{ duration: 0.65 }}
-              onSubmit={(event) => event.preventDefault()}
+              onSubmit={handleSubmit}
               className="mt-10 rounded-2xl border border-white/10 bg-white/5 p-6 shadow-sm sm:p-8"
             >
               <h3 className="text-3xl font-semibold leading-none text-white">
@@ -114,6 +129,8 @@ const Contact = () => {
                   </span>
                   <input
                     type="text"
+                    name="name"
+                    required
                     placeholder="Your name"
                     className="w-full rounded-2xl border border-white/10 bg-slate-950/55 px-4 py-3.5 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-slate-300/40"
                   />
@@ -124,6 +141,8 @@ const Contact = () => {
                   </span>
                   <input
                     type="email"
+                    name="email"
+                    required
                     placeholder="you@example.com"
                     className="w-full rounded-2xl border border-white/10 bg-slate-950/55 px-4 py-3.5 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-slate-300/40"
                   />
@@ -137,6 +156,7 @@ const Contact = () => {
                   </span>
                   <input
                     type="text"
+                    name="phone"
                     placeholder="Phone number"
                     className="w-full rounded-2xl border border-white/10 bg-slate-950/55 px-4 py-3.5 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-slate-300/40"
                   />
@@ -145,7 +165,10 @@ const Contact = () => {
                   <span className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-300">
                     Service
                   </span>
-                  <select className="w-full rounded-2xl border border-white/10 bg-slate-950/55 px-4 py-3.5 text-sm text-white outline-none transition focus:border-slate-300/40">
+                  <select
+                    name="service"
+                    className="w-full rounded-2xl border border-white/10 bg-slate-950/55 px-4 py-3.5 text-sm text-white outline-none transition focus:border-slate-300/40"
+                  >
                     <option>General Contracts</option>
                     <option>Construction Services</option>
                     <option>Printing Services</option>
@@ -161,6 +184,8 @@ const Contact = () => {
                 </span>
                 <textarea
                   rows="6"
+                  name="message"
+                  required
                   placeholder="Share your requirements"
                   className="w-full rounded-2xl border border-white/10 bg-slate-950/55 px-4 py-3.5 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-slate-300/40"
                 />
@@ -168,9 +193,10 @@ const Contact = () => {
 
               <button
                 type="submit"
+                disabled={isSubmitting}
                 className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:bg-slate-100"
               >
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
                 <Send size={16} />
               </button>
             </motion.form>

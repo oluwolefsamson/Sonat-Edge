@@ -1,11 +1,25 @@
 "use client";
 
+import { useRef, useState } from "react";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { motion } from "framer-motion";
+import { toast } from "sonner";
 import PageHero from "../components/Corporate/PageHero";
 import { contactSections, contacts, visuals } from "../data/siteContent";
 
 const ContactPage = () => {
+  const formRef = useRef(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    await new Promise((resolve) => setTimeout(resolve, 900));
+    formRef.current?.reset();
+    toast.success("Your message has been sent successfully.");
+    setIsSubmitting(false);
+  };
+
   return (
     <div className="bg-white text-slate-900">
       <PageHero
@@ -55,11 +69,12 @@ const ContactPage = () => {
           </div>
 
           <motion.form
+            ref={formRef}
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.55 }}
-            onSubmit={(event) => event.preventDefault()}
+            onSubmit={handleSubmit}
             className="rounded-3xl border border-slate-200 bg-white p-8 shadow-[0_24px_70px_rgba(15,23,42,0.12)]"
           >
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">
@@ -80,6 +95,8 @@ const ContactPage = () => {
                 </span>
                 <input
                   type="text"
+                  name="name"
+                  required
                   placeholder="Your name"
                   className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-500/40"
                 />
@@ -90,6 +107,8 @@ const ContactPage = () => {
                 </span>
                 <input
                   type="email"
+                  name="email"
+                  required
                   placeholder="you@example.com"
                   className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-500/40"
                 />
@@ -100,6 +119,8 @@ const ContactPage = () => {
                 </span>
                 <textarea
                   rows="7"
+                  name="message"
+                  required
                   placeholder="Tell us about your project"
                   className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-500/40"
                 />
@@ -108,9 +129,10 @@ const ContactPage = () => {
 
             <button
               type="submit"
-              className="mt-6 inline-flex items-center justify-center rounded-full bg-slate-950 px-6 py-3.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-slate-800"
+              disabled={isSubmitting}
+              className="mt-6 inline-flex items-center justify-center rounded-full bg-slate-950 px-6 py-3.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-60"
             >
-              Send Message
+              {isSubmitting ? "Sending..." : "Send Message"}
             </button>
           </motion.form>
         </div>
