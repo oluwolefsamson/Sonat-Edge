@@ -7,14 +7,14 @@ import { team } from "../../data/companyProfile";
 import { visuals } from "../../data/visuals";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "../ui/dialog";
 
-const TeamCard = ({ member, index, onViewProfile }) => {
+const TeamCard = ({ member, index, onViewProfile, featured = false }) => {
   const avatar = member.image ?? visuals.teamFallbackProfileImage;
   const avatarClass =
     member.image
       ? member.image === "/team/samson.png"
-        ? "aspect-[4/5] w-full rounded-lg bg-[#14361e] object-contain object-center sm:h-[250px] sm:aspect-auto"
-        : "aspect-[4/5] w-full rounded-lg object-cover object-[center_15%] sm:h-[250px] sm:aspect-auto sm:scale-[1.16] sm:transform-gpu"
-      : "aspect-[4/5] w-full rounded-lg bg-white object-contain object-top p-3 sm:h-[250px] sm:aspect-auto";
+        ? "h-full w-full object-contain object-center"
+        : "h-full w-full object-cover object-[center_15%]"
+      : "h-full w-full object-contain object-top p-4";
 
   return (
     <motion.article
@@ -22,30 +22,52 @@ const TeamCard = ({ member, index, onViewProfile }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.25 }}
       transition={{ duration: 0.45, delay: index * 0.05 }}
-      className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md"
+      className={`overflow-hidden border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md ${
+        featured ? "rounded-[2rem]" : "rounded-2xl"
+      }`}
     >
-      <div className="relative">
+      <div className={featured ? "grid gap-0 lg:grid-cols-[0.92fr_1.08fr]" : "grid gap-0"}>
         <button
           type="button"
           onClick={() => onViewProfile(member, avatar)}
-          className="block w-full overflow-hidden rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2"
+          className={`group block overflow-hidden bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 ${
+            featured ? "aspect-[4/5] lg:aspect-auto lg:min-h-[340px]" : "aspect-[4/5]"
+          }`}
           aria-label={`View profile for ${member.name}`}
         >
-          <img
-            src={avatar}
-            alt={member.name}
-            className={avatarClass}
-          />
+          <div className="relative h-full w-full">
+            <img
+              src={avatar}
+              alt={member.name}
+              className={avatarClass}
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.04)_0%,rgba(15,23,42,0.2)_100%)]" />
+          </div>
         </button>
-      </div>
-      <div className="space-y-2 p-4">
-        <span className="inline-flex rounded-full border border-slate-200 bg-slate-100 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-700">
-          {member.role}
-        </span>
-        <h3 className="text-xl font-bold leading-snug text-slate-900">
-          {member.name}
-        </h3>
-        <p className="text-sm leading-6 text-slate-600">{member.position}</p>
+
+        <div className="space-y-4 p-5 sm:p-6">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="inline-flex rounded-full border border-emerald-600/15 bg-emerald-600/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-700">
+              {member.role}
+            </span>
+            {featured ? (
+              <span className="inline-flex rounded-full border border-slate-200 bg-slate-100 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-700">
+                Featured leader
+              </span>
+            ) : null}
+          </div>
+          <div className="space-y-2">
+            <h3 className="text-xl font-bold leading-snug text-slate-900 sm:text-[1.35rem]">
+              {member.name}
+            </h3>
+            <p className="text-sm leading-6 text-slate-600">{member.position}</p>
+          </div>
+          <p className="text-sm leading-7 text-slate-600">
+            {featured
+              ? "This role anchors strategy, delivery, and company direction."
+              : "Tap the card to view the full profile summary and role details."}
+          </p>
+        </div>
       </div>
     </motion.article>
   );
@@ -89,49 +111,87 @@ const Team = () => {
 
   return (
     <section id="team" className="relative overflow-hidden bg-gray-50 text-slate-900">
-      <div className="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-slate-300/30 blur-3xl" />
+      <div className="absolute left-0 top-10 h-72 w-72 rounded-full bg-emerald-300/20 blur-3xl" />
+      <div className="absolute right-0 top-0 h-80 w-80 rounded-full bg-slate-300/30 blur-3xl" />
       <div className="mx-auto max-w-7xl px-6 py-20 sm:py-24">
-        <div className="grid gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+        <div className="max-w-3xl">
+          <SectionHeading
+            eyebrow="Team"
+            title="Leadership and key officers"
+            description="The team is organized as a clear leadership bench and a support group of officers who keep delivery, finance, administration, HR, and technology moving in step."
+            tone="light"
+          />
+        </div>
+
+        <div className="mt-10 grid gap-6 xl:grid-cols-[1.08fr_0.92fr] xl:items-start">
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
-            className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
+            className="rounded-[2rem] border border-slate-200 bg-white p-5 shadow-sm sm:p-6"
           >
-            <img
-              src={visuals.teamFeatureImage}
-              alt="Leadership and management visual"
-              className="relative z-0 block aspect-[4/5] w-full rounded-lg object-cover object-center sm:aspect-auto sm:h-[680px] lg:h-[640px]"
-            />
-            <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04)_0%,rgba(15,23,42,0.88)_100%)]" />
-            <div className="absolute inset-x-0 bottom-0 z-20 p-8 text-white">
-              <p className="text-[11px] uppercase tracking-[0.32em] text-emerald-300">
-                Management structure
-              </p>
-              <h2 className="mt-3 text-4xl font-semibold leading-[1] sm:text-5xl">
-                Experienced leadership across delivery, finance, development, and operations.
-              </h2>
-              <p className="mt-4 max-w-md text-sm leading-7 text-slate-300">
-                The profile highlights a clear structure from CEO through key
-                officers, each responsible for keeping execution disciplined and
-                coordinated.
-              </p>
+            <div className="flex flex-wrap items-end justify-between gap-4 border-b border-slate-200 pb-5">
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-emerald-700">
+                  Leadership bench
+                </p>
+                <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+                  People responsible for direction and execution.
+                </h2>
+              </div>
+              <div className="grid grid-cols-2 gap-3 text-left">
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">
+                    Leaders
+                  </p>
+                  <p className="mt-1 text-xl font-semibold text-slate-900">
+                    {team.leadership.length}
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">
+                    Officers
+                  </p>
+                  <p className="mt-1 text-xl font-semibold text-slate-900">
+                    {team.officers.length}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 grid gap-5">
+              {team.leadership.map((member, index) => (
+                <TeamCard
+                  key={member.name}
+                  member={member}
+                  index={index}
+                  onViewProfile={handleViewProfile}
+                  featured={index === 0}
+                />
+              ))}
             </div>
           </motion.div>
 
-          <div>
-            <SectionHeading
-              eyebrow="Team"
-              title="Leadership and key officers"
-              description="The company profile includes top management, directors, and key departmental officers who drive execution across finance, implementation, business development, HR, administration, and IT."
-              tone="light"
-            />
+          <motion.aside
+            initial={{ opacity: 0, x: 24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+            className="rounded-[2rem] border border-slate-200 bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] p-5 shadow-sm sm:p-6"
+          >
+            <div className="flex items-end justify-between gap-4 border-b border-slate-200 pb-5">
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-emerald-700">
+                  Officers
+                </p>
+                <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+                  Support roles that keep the work moving.
+                </h2>
+              </div>
+            </div>
 
-            <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-              {team.leadership.map((member, index) => (
-                <TeamCard key={member.name} member={member} index={index} onViewProfile={handleViewProfile} />
-              ))}
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
               {team.officers.map((member, index) => (
                 <TeamCard
                   key={member.name}
@@ -141,7 +201,7 @@ const Team = () => {
                 />
               ))}
             </div>
-          </div>
+          </motion.aside>
         </div>
       </div>
 

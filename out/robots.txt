@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://www.sonatedge.com
+Sitemap: https://www.sonatedge.com/sitemap.xml

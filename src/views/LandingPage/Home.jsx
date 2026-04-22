@@ -4,6 +4,8 @@ import Services from "../../components/Corporate/Services";
 import Values from "../../components/Corporate/Values";
 import Projects from "../../components/Corporate/Projects";
 import Team from "../../components/Corporate/Team";
+import Testimonials from "../../components/Corporate/Testimonials";
+import FAQ from "../../components/Corporate/FAQ";
 import Contact from "../../components/Corporate/Contact";
 
 const Home = () => {
@@ -16,6 +18,8 @@ const Home = () => {
       <Values />
       <Projects />
       <Team />
+      <Testimonials />
+      <FAQ />
       <Contact />
     </div>
   );

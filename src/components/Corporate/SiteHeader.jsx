@@ -32,15 +32,15 @@ const SiteHeader = () => {
   const linkClass = (itemPath) =>
     [
       "text-sm font-medium transition duration-200",
-      isActive(itemPath) ? "text-white" : "text-slate-300 hover:text-white",
+      isActive(itemPath) ? "text-slate-950" : "text-slate-600 hover:text-slate-950",
     ].join(" ");
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b border-white/10 transition-colors ${
+      className={`sticky top-0 z-50 border-b border-slate-200 transition-colors ${
         scrolled
-          ? "bg-slate-950/70 backdrop-blur-2xl"
-          : "bg-slate-950/45 backdrop-blur-2xl"
+          ? "bg-white/95 backdrop-blur-2xl"
+          : "bg-white/85 backdrop-blur-2xl"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
@@ -63,7 +63,7 @@ const SiteHeader = () => {
         <div className="hidden lg:block">
           <Link
             href="/contact"
-            className="inline-flex items-center rounded-full bg-emerald-500 px-5 py-3 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(16,185,129,0.16)] transition duration-300 hover:-translate-y-0.5 hover:bg-emerald-400"
+            className="inline-flex items-center rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(15,23,42,0.16)] transition duration-300 hover:-translate-y-0.5 hover:bg-slate-800"
           >
             Contact Us
           </Link>
@@ -72,7 +72,7 @@ const SiteHeader = () => {
         <button
           type="button"
           onClick={() => setOpen((prev) => !prev)}
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white shadow-[0_8px_30px_rgba(15,23,42,0.18)] backdrop-blur-xl lg:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-950 shadow-[0_8px_30px_rgba(15,23,42,0.08)] backdrop-blur-xl lg:hidden"
           aria-label="Toggle navigation"
         >
           {open ? <X size={18} /> : <Menu size={18} />}
@@ -86,7 +86,7 @@ const SiteHeader = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
-            className="border-t border-white/10 bg-slate-950/85 px-6 py-4 backdrop-blur-2xl lg:hidden"
+            className="border-t border-slate-200 bg-white/95 px-6 py-4 backdrop-blur-2xl lg:hidden"
           >
             <div className="mx-auto flex max-w-7xl flex-col gap-4">
               {navItems.map((item) => (
@@ -97,8 +97,8 @@ const SiteHeader = () => {
                   className={[
                     "rounded-2xl border px-4 py-3 text-sm font-medium transition",
                     isActive(item.to)
-                      ? "border-emerald-400/30 bg-emerald-500/10 text-white"
-                      : "border-white/5 bg-white/5 text-slate-200",
+                      ? "border-slate-950 bg-slate-950 text-white"
+                      : "border-slate-200 bg-slate-50 text-slate-700",
                   ].join(" ")}
                 >
                   {item.label}
@@ -107,7 +107,7 @@ const SiteHeader = () => {
               <Link
                 href="/contact"
                 onClick={() => setOpen(false)}
-                className="rounded-2xl bg-emerald-500 px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-emerald-400"
+                className="rounded-2xl bg-slate-950 px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-slate-800"
               >
                 Contact Us
               </Link>

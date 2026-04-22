@@ -19,26 +19,28 @@ export const visuals = {
     "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1800&q=80",
   contactImage:
     "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80",
+  faqImage:
+    "https://plus.unsplash.com/premium_photo-1661544387715-0fbbcaad6094?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
   teamFeatureImage:
     "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1800&q=80",
   teamFallbackProfileImage: "/team/111.png",
   testimonialFeatureImage:
     "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1800&q=80",
   testimonialOne:
-    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1763013373655-98c4ea6086e0?auto=format&fit=crop&w=1200&q=80",
   testimonialTwo:
-    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1678282955795-200c1e18bc7d?auto=format&fit=crop&w=1200&q=80",
   testimonialThree:
-    "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1769636929354-59165ba73c7e?auto=format&fit=crop&w=1200&q=80",
   teamPortraits: [
-    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80",
-    "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=80",
-    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80",
-    "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=1200&q=80",
-    "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1200&q=80",
-    "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80",
-    "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=1200&q=80",
-    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80",
-    "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=80",
+    "/team/mary.png",
+    "/team/samson.png",
+    "/team/seyi.png",
+    "/team/victor.png",
+    "/team/111.png",
+    "/team/mary.png",
+    "/team/samson.png",
+    "/team/seyi.png",
+    "/team/victor.png",
   ],
 };
