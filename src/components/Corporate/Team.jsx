@@ -7,7 +7,7 @@ import { team } from "../../data/companyProfile";
 import { visuals } from "../../data/visuals";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "../ui/dialog";
 
-const TeamCard = ({ member, index, onViewProfile, featured = false }) => {
+const TeamRow = ({ member, index, onViewProfile, featured = false, compact = false }) => {
   const avatar = member.image ?? visuals.teamFallbackProfileImage;
   const avatarClass =
     member.image
@@ -22,53 +22,47 @@ const TeamCard = ({ member, index, onViewProfile, featured = false }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.25 }}
       transition={{ duration: 0.45, delay: index * 0.05 }}
-      className={`overflow-hidden border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md ${
-        featured ? "rounded-[2rem]" : "rounded-2xl"
-      }`}
+      className="border-b border-slate-200/80 py-5 transition duration-300 hover:bg-slate-50/70"
     >
-      <div className={featured ? "grid gap-0 lg:grid-cols-[0.92fr_1.08fr]" : "grid gap-0"}>
-        <button
-          type="button"
-          onClick={() => onViewProfile(member, avatar)}
-          className={`group block overflow-hidden bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 ${
-            featured ? "aspect-[4/5] lg:aspect-auto lg:min-h-[340px]" : "aspect-[4/5]"
-          }`}
-          aria-label={`View profile for ${member.name}`}
-        >
-          <div className="relative h-full w-full">
-            <img
-              src={avatar}
-              alt={member.name}
-              className={avatarClass}
-            />
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.04)_0%,rgba(15,23,42,0.2)_100%)]" />
+      <button
+        type="button"
+        onClick={() => onViewProfile(member, avatar)}
+        className="block w-full text-left focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2"
+        aria-label={`View profile for ${member.name}`}
+      >
+        <div className={`flex gap-4 ${compact ? "items-center" : "items-start sm:items-center"}`}>
+          <div className={`relative shrink-0 overflow-hidden rounded-3xl bg-slate-100 ${compact ? "h-20 w-20" : "h-24 w-24 sm:h-28 sm:w-28"}`}>
+            <img src={avatar} alt={member.name} className={avatarClass} />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.02)_0%,rgba(15,23,42,0.14)_100%)]" />
           </div>
-        </button>
 
-        <div className="space-y-4 p-5 sm:p-6">
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="inline-flex rounded-full border border-emerald-600/15 bg-emerald-600/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-700">
-              {member.role}
-            </span>
-            {featured ? (
-              <span className="inline-flex rounded-full border border-slate-200 bg-slate-100 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-700">
-                Featured leader
+          <div className="min-w-0 flex-1">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="inline-flex rounded-full border border-emerald-600/15 bg-emerald-600/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-700">
+                {member.role}
               </span>
-            ) : null}
+              {featured ? (
+                <span className="inline-flex rounded-full border border-slate-200 bg-slate-100 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-700">
+                  Featured leader
+                </span>
+              ) : null}
+            </div>
+
+            <div className="mt-2 space-y-1">
+              <h3 className="truncate text-lg font-semibold leading-snug text-slate-900 sm:text-xl">
+                {member.name}
+              </h3>
+              <p className="text-sm leading-6 text-slate-600">{member.position}</p>
+            </div>
+
+            <p className="mt-2 text-sm leading-7 text-slate-600">
+              {featured
+                ? "This role anchors strategy, delivery, and company direction."
+                : "Tap to view the full profile summary and role details."}
+            </p>
           </div>
-          <div className="space-y-2">
-            <h3 className="text-xl font-bold leading-snug text-slate-900 sm:text-[1.35rem]">
-              {member.name}
-            </h3>
-            <p className="text-sm leading-6 text-slate-600">{member.position}</p>
-          </div>
-          <p className="text-sm leading-7 text-slate-600">
-            {featured
-              ? "This role anchors strategy, delivery, and company direction."
-              : "Tap the card to view the full profile summary and role details."}
-          </p>
         </div>
-      </div>
+      </button>
     </motion.article>
   );
 };
@@ -140,29 +134,11 @@ const Team = () => {
                   People responsible for direction and execution.
                 </h2>
               </div>
-              <div className="grid grid-cols-2 gap-3 text-left">
-                <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">
-                    Leaders
-                  </p>
-                  <p className="mt-1 text-xl font-semibold text-slate-900">
-                    {team.leadership.length}
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">
-                    Officers
-                  </p>
-                  <p className="mt-1 text-xl font-semibold text-slate-900">
-                    {team.officers.length}
-                  </p>
-                </div>
-              </div>
             </div>
 
-            <div className="mt-6 grid gap-5">
+            <div className="mt-2">
               {team.leadership.map((member, index) => (
-                <TeamCard
+                <TeamRow
                   key={member.name}
                   member={member}
                   index={index}
@@ -191,13 +167,14 @@ const Team = () => {
               </div>
             </div>
 
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <div className="mt-2">
               {team.officers.map((member, index) => (
-                <TeamCard
+                <TeamRow
                   key={member.name}
                   member={member}
                   index={index + team.leadership.length}
                   onViewProfile={handleViewProfile}
+                  compact
                 />
               ))}
             </div>
